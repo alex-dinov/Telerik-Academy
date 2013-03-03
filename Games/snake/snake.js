@@ -46,11 +46,11 @@
     ctx.fillRect(0, 0, width, height);
     ctx.strokeStyle = "black";
 	  ctx.strokeRect(0, 0, width, height);
-    ctx.fillStyle = 'green';
+    ctx.fillStyle = "green";
     ctx.fillRect(food.x * dx, food.y * dy, dx, dy);
     var box = head;
     while(box = box.next) {
-      ctx.fillStyle = 'blue';
+      ctx.fillStyle = "blue";
       ctx.fillRect(box.x * dx + 1, box.y * dy + 1, dx - 2, dy - 2);
     }
     ctx.font = "15px Verdana";
@@ -70,7 +70,7 @@
   };
 
   function increase(changeDir) {
-    direction  = (typeof changeDir != 'undefined') ? changeDir : direction;
+    direction  = (typeof changeDir != "undefined") ? changeDir : direction;
     switch(direction) {
       case dir.left:  push({x: head.x == 0 ? nx-1 : head.x-1, y: head.y }); break;
       case dir.right: push({x: head.x == nx-1 ? 0 : head.x+1, y: head.y }); break;
