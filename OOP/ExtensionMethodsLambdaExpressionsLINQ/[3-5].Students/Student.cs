@@ -45,5 +45,27 @@ namespace _3_5_.Students
                 this.age = value; 
             }
         }
+
+        public static void printStudents(Student[] students)
+        {
+            foreach (var student in students)
+            {
+                Console.WriteLine(student);
+            }
+        }
+
+        public static void GetStudents(Student[] students)
+        {
+            var newStudents =
+               from student in students
+               where student.FirstName.CompareTo(student.LastName) < 0
+               select student;
+            printStudents(newStudents.ToArray());
+        }
+
+        public override string ToString()
+        {
+            return string.Format(this.FirstName + " " + this.LastName + " " + this.Age); 
+        }
     }
 }

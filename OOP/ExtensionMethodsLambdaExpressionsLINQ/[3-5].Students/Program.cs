@@ -17,7 +17,7 @@ namespace _3_5_.Students
                 new Student("Ivo", "Ivanov",18),
                 new Student("Aleksandar", "Dimitrov",25),
                 new Student("Rosen","Gacov",25)};
-            students.GetStudents(students);
+            Student.GetStudents(students);
             Console.WriteLine("-------------------------------");
 
 
@@ -26,13 +26,13 @@ namespace _3_5_.Students
                 from student in students
                 where student.Age >= 18 && student.Age <= 24
                 select student;
-            ExtensionMethods.printStudents(normalAgeStudents.ToArray());
+            Student.printStudents(normalAgeStudents.ToArray());
             Console.WriteLine("-------------------------------");
 
 
             Console.WriteLine("zad.5\n");
             var descendingOrderStudents = students.OrderByDescending(student => student.FirstName).ThenByDescending(student => student.LastName);
-            ExtensionMethods.printStudents(descendingOrderStudents.ToArray());
+            Student.printStudents(descendingOrderStudents.ToArray());
             Console.WriteLine("-------------------------------");
             //LINQ
             var descendingOrderStudentsByLINQ =
@@ -40,7 +40,7 @@ namespace _3_5_.Students
                 orderby student.FirstName descending,
                 student.LastName descending
                 select student;
-            ExtensionMethods.printStudents(descendingOrderStudentsByLINQ.ToArray());
+            Student.printStudents(descendingOrderStudentsByLINQ.ToArray());
         }
     }
 }
