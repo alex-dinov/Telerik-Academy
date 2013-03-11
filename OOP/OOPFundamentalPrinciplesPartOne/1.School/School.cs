@@ -11,12 +11,16 @@ namespace _1.School
         private string name;
         private List<Class> classes;
         private List<Student> students;
+        private List<Teacher> teachers;
+        private List<Discipline> disciplines;
 
         public School(string name)
         {
             this.name = name;
             this.classes = new List<Class>();
             this.students = new List<Student>();
+            this.teachers = new List<Teacher>();
+            this.disciplines = new List<Discipline>();
         }
 
         public string Name
@@ -32,6 +36,16 @@ namespace _1.School
         public IEnumerable<Student> Students
         {
             get { return this.students; }
+        }
+
+        public IEnumerable<Teacher> Teachers
+        {
+            get { return this.teachers; }
+        }
+
+        public IEnumerable<Discipline> Disciplines
+        {
+            get { return this.disciplines; }
         }
 
         public void AddClass(Class @class)

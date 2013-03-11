@@ -13,6 +13,8 @@ namespace _1.School
             School school = new School("Telerik");
             Class aClass = new Class("A");
             Teacher teacherKiselov = new Teacher("Zdravko", "Kiselov");
+            teacherKiselov.Comment = "Na kosam";
+            Console.WriteLine(teacherKiselov.Comment);
 
             aClass.AddTeacher(teacherKiselov);
             aClass.AddStudent(new Student("Gosho","Georgiev",1));
@@ -24,7 +26,6 @@ namespace _1.School
             {
                 Console.WriteLine(student.Name);
             }
-            //TODO: Comments and class diagram
         }
     }
 }
