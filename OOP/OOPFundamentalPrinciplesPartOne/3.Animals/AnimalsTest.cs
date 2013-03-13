@@ -17,7 +17,7 @@ namespace _3.Animals
                 new Tomcat(6,"Kasanova"),
                 new Dog(4,"Balkan",Sex.male),
                 new Dog(5,"Pencho",Sex.male),
-                new Kitten(2,"Kurvoleta"),
+                new Kitten(2,"Penka"),
                 new Kitten(3,"Virginia"),
                 new Tomcat(8,"Kotkar"),
                 new Tomcat(3,"Garfield")
