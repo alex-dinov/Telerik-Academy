@@ -4,11 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BDB719C6-CD4F-43BE-9CFA-D12375F7F301}</ProjectGuid>
+    <ProjectGuid>{D38D946D-40C1-4B14-9C25-F073CBE04007}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Assistant</RootNamespace>
-    <AssemblyName>Assistant</AssemblyName>
+    <RootNamespace>DocumentSystem</RootNamespace>
+    <AssemblyName>DocumentSystem</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,17 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Appoinment.cs" />
-    <Compile Include="Contact.cs" />
-    <Compile Include="Firm.cs" />
-    <Compile Include="Person.cs" />
-    <Compile Include="PersonalAssistant.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
+    <Compile Include="AudioDocument.cs" />
+    <Compile Include="BinaryDocument.cs" />
+    <Compile Include="Document.cs" />
+    <Compile Include="EncryptableDocument.cs" />
+    <Compile Include="ExcelDocument.cs" />
+    <Compile Include="IDocument.cs" />
+    <Compile Include="DocumentSystem.cs" />
+    <Compile Include="IEditable.cs" />
+    <Compile Include="IEncryptable.cs" />
+    <Compile Include="MultimediaDocument.cs" />
+    <Compile Include="OfficeDocument.cs" />
+    <Compile Include="PDFDocument.cs" />
+    <Compile Include="TextDocument.cs" />
+    <Compile Include="VideoDocument.cs" />
+    <Compile Include="WordDocument.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

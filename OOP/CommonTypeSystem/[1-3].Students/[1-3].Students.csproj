@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BDB719C6-CD4F-43BE-9CFA-D12375F7F301}</ProjectGuid>
+    <ProjectGuid>{5DB66845-B9E6-4A09-9C4F-72CF66A36B0A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Assistant</RootNamespace>
-    <AssemblyName>Assistant</AssemblyName>
+    <RootNamespace>_1_3_.Students</RootNamespace>
+    <AssemblyName>[1-3].Students</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,17 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Appoinment.cs" />
-    <Compile Include="Contact.cs" />
-    <Compile Include="Firm.cs" />
-    <Compile Include="Person.cs" />
-    <Compile Include="PersonalAssistant.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Faculty.cs" />
+    <Compile Include="Specialty.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="TestStudents.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="University.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
