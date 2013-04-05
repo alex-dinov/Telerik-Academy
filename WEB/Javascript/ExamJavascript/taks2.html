@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title></title>
+</head>
+<body>
+	<script>
+		function Solve (params) {
+			var lineOne = params[0];
+			var firstLine = lineOne.split(" ");
+			var N = parseInt(firstLine[0]);
+			var M = parseInt(firstLine[1]);
+			var J = parseInt(firstLine[2]);
+			var lineTwo = params[1];
+			var secondLine = lineTwo.split(" ");
+			var R = parseInt(secondLine[0]);
+			var C = parseInt(secondLine[1]);
+			var jumps = [];
+			for (var i = 2,j = 0; i < J + 2; i++,j++) {
+				var line = params[i];
+				var linen = line.split(" ");
+				var jump = new Jump(parseInt(linen[0]),parseInt(linen[1]));
+				jumps.push(jump);
+			}
+
+			function Jump (R,C) {
+				this.R = R;
+				this.C = C;
+			}
+
+			var field = new Array(N);
+			var visited = new Array(N);
+			var count = 1;
+			for (var k = 0; k < N; k++) {
+					field[k] = new Array(M);
+					visited[k] = new Array(M);
+				for (var j = 0; j < M; j++) {
+					visited[k][j] = false;
+					field[k][j] = parseInt(count);
+					count++;
+				}
+			}
+			var currPosition = new Jump(R,C);
+			var sum = field[currPosition.R][currPosition.C];
+			var output = "";
+			var numberOfJumps = 0;
+			var flag = false;
+			while(true) {
+				for (var i = 0; i < jumps.length; i++) {
+					currPosition.R += jumps[i].R;
+					currPosition.C += jumps[i].C;
+					visited[currPosition.R][currPosition.C] = true;
+					if (check(field,currPosition)) {
+
+						if (visited[currPosition.R][currPosition.C]) {
+						output = "caught" + " " + numberOfJumps;
+						flag = true;
+						break;
+						}
+
+						sum += field[currPosition.R][currPosition.C];
+						numberOfJumps++;
+						
+					}
+					else {
+						output = "escaped" + " " + sum;
+						flag = true;
+						break;
+					}
+				}
+				if (flag) {
+					break;
+				}
+			}
+
+			return output;
+
+			function check (field, currPosition) {
+				if (currPosition.R < 0 || currPosition.C < 0 || currPosition.R > M - 1 || currPosition.C > field.length - 1) {
+					return false;
+				}
+				return true;
+			}
+		}
+		var params = ["1 1 3","0 0","0 0","-2 2","3 -1"];
+		console.log(Solve(params));
+	</script>
+</body>
+</html>

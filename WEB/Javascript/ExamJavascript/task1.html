@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title></title>
+</head>
+<body>
+	<script>
+		function Solve (params) {
+			var n = parseInt(params[0]);
+			
+			var answer = 0;
+			var arr = [];
+			for (var i = 1, j = 0; i <= n; i++,j++) {
+				arr[j] = parseInt(params[i]);
+			}
+			var count = 0;
+			for (var k = 0; k < arr.length; k++) {
+				if (arr[k] <= arr[k+1]) {
+					continue;
+				}
+				else {
+					count++;
+				}
+			}
+
+			return count;
+		}
+		var params = [9,1,8,8,7,6,5,7,7,6];
+		console.log(Solve(params));
+	</script>
+</body>
+</html>

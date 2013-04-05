@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title></title>
+</head>
+<body>
+	<script>
+		function Solve (params) {
+			var answer = 0;
+			for (var i = 0; i < params.length; i++) {
+				var string = params[i];
+				proceed(string);
+			}
+			return answer;
+		}
+
+		function Variable (name,value) {
+			this.name = name;
+			this.value = value;
+		}
+
+		function proceed (string) {
+			var variables = [];
+			var variable = string.indexOf("def");
+			while(variable != -1) {
+				var v = new Variable();
+				var current = string.substr(string.indexOf("def") + 4,string.indexOf(" "));
+				v.name = current;
+				v.value = parseInt(string.substr(string.indexOf("def") + 3 +string.indexOf(" "),string.indexOf(" ")));
+				variables.push(v); 
+				variable = string.indexOf("def",variable+1);
+			}
+			for (var i = 0; i < string.length; i++) {
+				if (string[i]) {}; string[i]
+			}
+		}
+		var params = [("(def func 10)")];
+		console.log(Solve(params));
+	</script>
+</body>
+</html>
