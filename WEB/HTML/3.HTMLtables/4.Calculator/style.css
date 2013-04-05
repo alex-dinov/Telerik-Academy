@@ -1,0 +1,20 @@
+table,table td {
+border:1px solid;
+text-align:center;
+}
+input {
+height:60px;
+width:60px;
+font-size:35px;
+}
+textarea {
+width:240px;
+height:60px;
+margin-bottom:-5px;
+text-align:right;
+font-size:35px;
+}
+#zero {
+width:120px;
+}
+

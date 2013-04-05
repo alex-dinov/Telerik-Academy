@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>SelectionSort</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<p>Please enter in textbox sequence of numbers divided by space e.g. 2 10 3 5...</p>
+	<input type="text" id = "numbers" placeholder = "numbers">
+	<button onclick = "SelectionSort()">Sort array</button>
+	<div id = "js-console"></div>
+	<script>
+		function SelectionSort() {
+			var numbers = document.getElementById('numbers');
+			var value = numbers.value;
+			var arr = value.split(" ");
+
+			var minIndex = 0;
+			for (var i = 0; i < arr.length; i++) {
+				minIndex = i;
+				for (var j = i + 1; j < arr.length; j++) {
+					if (parseInt(arr[j]) < parseInt(arr[minIndex])) {
+						minIndex = j;
+					}
+				}
+				if (minIndex != i) {
+					var temp = parseInt(arr[i]);
+					arr[i] = parseInt(arr[minIndex]);
+					arr[minIndex] = temp;
+				}
+			}
+
+			for (var i = 0; i < arr.length; i++) {
+				jsConsole.writeLine(arr[i] + " ");
+			};
+		};
+	</script>
+	<script src="scripts/js-console.js"></script>
+</body>
+</html>

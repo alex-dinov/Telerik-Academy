@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>Tags</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<p>We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>Anything</lowcase> else.</p>
+	<div id = "js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		var text = document.querySelector('p').innerHTML;
+
+		function changeToUpcase (text) {
+			var openTag = text.indexOf("<upcase>");
+			var closeTag = text.indexOf("</upcase>");
+			while(openTag != -1) {
+				var length = closeTag - openTag;
+				var normalText = text.substr(openTag + 8, length - 8);
+				var upper = text.substr(openTag + 8, length - 8).toUpperCase();
+				text = text.replace(normalText, upper);
+				openTag = text.indexOf("<upcase>",openTag + 1);
+				closeTag = text.indexOf("</upcase>",closeTag + 1);
+			}
+			return text;
+		}
+
+		function changeToLowcase (text) {
+			var openTag = text.indexOf("<lowcase>");
+			var closeTag = text.indexOf("</lowcase>");
+			while(openTag != -1) {
+				var length = closeTag - openTag;
+				var normalText = text.substr(openTag + 9, length - 9);
+				var lower = text.substr(openTag + 9, length - 9).toLowerCase();
+				text = text.replace(normalText, lower);
+				openTag = text.indexOf("<lowcase>",openTag + 1);
+				closeTag = text.indexOf("</lowcase>",closeTag + 1);
+			}
+			return text;
+		}
+
+		function changeToMixcase (text) {
+			var openTag = text.indexOf("<mixcase>");
+			var closeTag = text.indexOf("</mixcase>");
+			while(openTag != -1) {
+				var length = closeTag - openTag;
+				var mixedText = text.substr(openTag + 9, length - 9);
+				for (var i = 0; i < mixedText.length; i++) {
+					if (i % 2 == 0) {
+						text = text.replace(mixedText[i], mixedText[i].toUpperCase());
+					}
+					else {
+						text = text.replace(mixedText[i], mixedText[i].toLowerCase());
+					}
+				}
+				openTag = text.indexOf("<mixcase>",openTag + 1);
+				closeTag = text.indexOf("</mixcase>",closeTag + 1);
+			}
+			return text;
+		}
+
+		text = changeToUpcase(text);
+		text = changeToLowcase(text);
+		text = changeToMixcase(text);
+		
+		jsConsole.writeLine(text);
+	</script>
+</body>
+</html>

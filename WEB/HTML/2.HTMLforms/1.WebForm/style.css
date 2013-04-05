@@ -1,0 +1,62 @@
+table , tr , td{
+border:1px solid #ccc;
+border-collapse:collapse;
+}
+table {
+width:460px;
+}
+.label  {
+width:150px;
+text-align:right;
+font-weight:bold;
+padding-right:5px;
+}
+#state {
+width:40px;
+}
+#city  {
+width:185px;
+margin:5px 0 5px 5px;
+}
+#month,#day {
+width:25px;
+}
+#year {
+width:55px;
+}
+.code {
+width:50px;
+margin:5px 0 5px 0px;
+}
+#number {
+width:105px;
+}
+#firstName ,#lastName , #email{
+width:260px;
+margin:5px 0 5px 5px;
+}
+#adress {
+height:60px;
+width:250px;
+margin:5px 0 5px 5px;
+}
+#country {
+width:195px;
+margin:5px 0 5px 5px;
+}
+#zip {
+width:70px;
+margin:5px 0 5px 5px;
+}
+#comments {
+height:100px;
+width:250px;
+margin:5px 0 5px 5px;
+}
+#gender ,#monthLabel{
+margin:5px 0 5px 5px;
+}
+#button {
+text-align:center;
+background-color:#CCECFF;
+}

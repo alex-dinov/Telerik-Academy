@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>CheckForPropery</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<div id = "js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function person (firstname, lastname, age) {
+			this.firstname = firstname;
+			this.lastname = lastname;
+			this.age = age;
+			this.toString = function () {
+				return this.firstname + " " + this.lastname;
+			}
+		}
+
+		function getYoungestPerson (persons) {
+			var youngestPerson = new person();
+			youngestPerson.age = 120;
+			for(var i = 0; i < persons.length; i++) {
+				if (persons[i].age < youngestPerson.age ) {
+					youngestPerson = persons[i];
+				}
+			}
+			return youngestPerson;
+		}
+
+		var persons = [];
+		persons.push(new person("Gosho","Ivanov",21));
+		persons.push(new person("Pencho","Penev",10));
+		persons.push(new person("Ivan","Ivanov",11));
+		
+		jsConsole.writeLine("The youngest person is: " + getYoungestPerson(persons));
+	</script>
+</body>
+</html>

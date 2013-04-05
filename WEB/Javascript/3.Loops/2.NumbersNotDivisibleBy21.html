@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>NumbersNotDivisibleBy21</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<input type="text" id = "n" placeholder = "n">
+	<button onclick = "NumbersNotDivisibleBy21()">Print numbers 1 to n not divisible by 21 </button>
+	<div id = "js-console"></div>
+	<script>
+		function NumbersNotDivisibleBy21() {
+			var n = jsConsole.readInteger("#n");
+			for (var i = 1; i <= n; i++) {
+				if (i % 21 != 0) {
+					jsConsole.write(i + " ");
+				}
+			};
+		};
+	</script>
+	<script src="scripts/js-console.js"></script>
+</body>
+</html>

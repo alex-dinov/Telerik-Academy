@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>WebForm</title>
+	<link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+	<form action="blala.php" method="post">
+		<table>
+			<tr>	
+				<td class="label">
+				<label for="lastName">Last Name</label>
+				</td>
+				<td>
+				<input type="text" value="Nakov" id="lastName" />
+				</td>
+			</tr>
+			<tr>
+				<td class="label">
+				<label for="firstName">First Name</label>
+				</td>
+				<td>
+				<input type="text" value="Svetlin" id="firstName" />
+				</td>
+			</tr>	
+			<tr>
+				<td class="label">
+				<label for="adress">Adress</label>
+				</td>
+				<td>
+				<textarea id="adress">17 Hristo Botev Str. floor 3, apt. 12</textarea>
+				</td>
+			</tr>	
+			<tr>
+				<td class="label">
+				<label for="city">City</label>
+				</td>
+				<td>
+				<input type="text" value="Kaspichan" id="city" />				
+				<label class="label" for="state">State</label>				
+				<input type="text" value="" id="state" />
+				</td>
+			</tr>	
+			<tr>
+				<td class="label">
+				<label for="zip">ZIP/Postal Code</label>
+				</td>
+				<td>
+				<input type="text" value="9325" id="zip" />
+				</td>
+			</tr>
+			<tr>
+				<td class="label">
+				<label for="country">Country</label>
+				</td>
+				<td>
+				<select id="country">
+					<option value="Value 1" selected="selected">Bulgaria</option>
+					<option value="Value 2">USA</option>
+					<option value="Value 3">China</option>
+				</select>
+				</td>
+			</tr>	
+			<tr>
+				<td class="label">
+				<label for="number">Phone(country code, area code, number)</label>
+				</td>
+				<td>
+				<span>(+</span>
+				<input type="text" value="359" class="code" />
+				<span>)</span>
+				<input type="text" value="88" class="code"/>
+				-
+				<input type="text" value="8334343" id="number"/>
+				</td>
+			<tr>
+				<td class="label">
+				<label for="email">E-mail</label>
+				</td>
+				<td>
+				<input type="text" value="nakov@kaspichan.org" id="email" />
+				</td>
+			</tr>
+			<tr>
+				<td class="label">
+				<label for="month">Birth Date</label>
+				</td>
+				<td>
+				<label id="monthLabel" for="month">Month</label>
+				<input type="text" value="06" id="month" maxlength="2" /> 
+				<label for="day">Day</label>
+				<input type="text" value="14" id="day" maxlength="2" />
+				<label for="year">Year (4 digit)</label>
+				<input type="text" value="1980" id="year" maxlength="4" />
+				</td>
+			</tr>	
+			<tr>
+				<td class="label">
+				<label for="gender">Gender</label>
+				</td>
+				<td>
+				<select id="gender">
+					<option value="Value 1" selected="selected">Male</option>
+					<option value="Value 2">Female</option>
+				</select>
+				</td>
+			</tr>	
+			<tr>
+				<td class="label">
+				<label for="startDateOne">Starting date</label>
+				</td>
+				<td>
+				<input type="radio" name="StartingDate" id="startDateOne" value="Spring 2006" />
+				<label for="startDateOne">Spring 2006</label>
+				<input type="radio" name="StartingDate" id="startDateTwo" value="Summer 2006" />
+				<label for="startDateTwo">Summer 2006</label>
+				</td>
+			</tr>
+			<tr>
+				<td class="label">
+				<label for="comments">Comments/Questions</label>
+				</td>
+				<td>
+				<textarea id="comments">Please send me more information about the loging</textarea>
+				</td>
+			</tr>
+			<tr>	
+				<td colspan="2" id="button">
+				<input type="button" value="Submit" />
+				<input type="reset" value="Clear This Form" />
+				</td>
+			</tr>	
+		</table>
+	</form>
+</body>
+</html>

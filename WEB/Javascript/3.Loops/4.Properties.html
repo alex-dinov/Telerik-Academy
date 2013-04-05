@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Properties</title>
+	<meta charset = "utf-8"/>
+</head>
+<body>
+	<p></p>
+	<script>
+
+		var properties = [];
+		var p = document.querySelector("p");
+
+		for(var prop in document)
+		{
+			properties.push(prop);
+		}
+		properties.sort();
+		p.innerHTML = "Document: <br /> smallest = " + properties[0] +
+		"<br />largest = " + properties[properties.length - 1];
+
+		properties = [];
+		for(var prop in window)
+		{
+			properties.push(prop);
+		}
+		properties.sort();
+		p.innerHTML += "<br /><br />Window: <br />  smallest = " + properties[0] +
+		"<br />largest = " + properties[properties.length - 1];
+
+		properties = [];
+		for(var prop in navigator)
+		{
+			properties.push(prop);
+		}
+		properties.sort();
+		p.innerHTML += "<br /><br />Navigator: <br /> smallest = " + properties[0] +
+		"<br />largest = " + properties[properties.length - 1];
+
+	</script>
+</body>
+</html>

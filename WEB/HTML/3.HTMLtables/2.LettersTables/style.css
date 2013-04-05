@@ -1,0 +1,12 @@
+table ,table td{
+border:1px solid;
+width:180px;
+text-align:center;
+border-color:F2F2F2;
+}
+.rightAligned {
+text-align:right;
+}
+#leftAligned {
+text-align:left;
+}

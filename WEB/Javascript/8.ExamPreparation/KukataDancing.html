@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title></title>
+</head>
+<body>
+	<script>
+		function Solve (args) {
+			var n = args[0];
+			var cube = [["RED","BLUE","RED"],["BLUE","GREEN","BLUE"],["RED","BLUE","RED"]];
+			var dance = [];
+			var x = 1;
+			var y = 1;
+			var current = cube[x][y];
+			var up = false;
+			var down = true;
+			var left = false;
+			var right = false;
+
+			for (var i = 1; i <= n; i++) {
+				var input = args[i];
+				for (var j = 0; j < input.length; j++) {
+					if (input[j] == "L") {
+						if (down) {
+							left = true;
+							down = false;
+							continue;
+						}
+						if (left) {
+							left = false;
+							up = true;
+							continue;
+						}
+						if (up) {
+							right = true;
+							up = false;
+							continue;
+						}
+						if (right) {
+							right = false;
+							down = true;
+							continue;
+						}
+					}
+					if (input[j] == "R") {
+						if (down)
+	                    {
+	                        down = false;
+	                        right = true;
+	                        continue;
+	                    }
+	                    if (right)
+	                    {
+	                        right = false;
+	                        up = true;
+	                        continue;
+	                    }
+	                    if (up)
+	                    {
+	                        up = false;
+	                        left = true;
+	                        continue;
+	                    }
+	                    if (left)
+	                    {
+	                        left = false;
+	                        down = true;
+	                        continue;
+	                    }
+					}
+
+					if (input[j] == "W") {
+						if (left) {
+							if (y == 0) {
+								y = 3;
+								current = cube[x][y - 1];
+								y--;
+								continue;
+							}
+							current = cube[x][y - 1];
+							y--;
+						}
+						if (down) {
+							if (x == 2) {
+								x = -1;
+								current = cube[x + 1][y];
+								x++;
+								continue;
+							}
+							current = cube[x + 1][y];
+							x++;
+						}
+
+						if (right) {
+							if (y == 2) {
+								y = -1;
+								current = cube[x][y + 1];
+								y++;
+								continue
+							}
+							current = cube[x][y + 1];
+							y++;
+						}
+						if (up) {
+							if (x == 0) {
+								x = 3;
+								current = cube[x - 1 ][y];
+								x--;
+								continue
+							}
+							current = cube[x - 1][y];
+							x--;
+						}
+					}
+				}
+				up = false;
+				down = true;
+				left = false;
+				right = false;
+				x = 1;
+				y = 1;
+				dance.push(current);
+				current = cube[x][y];
+			}
+			var output = "";
+			for(var d in dance) {
+				if (output != "") {
+					output += "\n";
+				}
+				output += dance[d];
+			}
+
+			return output;
+		}
+		var args = [5,"LLRR","WWWWWWWWWWWW","WLWRW","WWL","LWRL"];
+		console.log(Solve(args));
+	</script>
+</body>
+</html>

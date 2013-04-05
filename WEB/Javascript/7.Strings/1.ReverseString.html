@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>ReverseString</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<input type="text" id = "string" placeholder = "string">
+	<button onclick = "ReverseString()">Reverse string</button>
+	<div id = "js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function ReverseString() {
+			var string = jsConsole.read('#string');
+
+			function buildStringBuilder() {
+	            return {
+	                strs: [],
+	                len: 0,
+	                append: function (str) {
+	                    this.strs[this.len++] = str;
+	                    return this;
+	                },
+	                toString: function () {
+	                    return this.strs.join("");
+	                }
+	            };
+	        }
+
+            var stringBuilder = buildStringBuilder();
+
+            for (var i = string.length; i >= 0 ; i--) {
+            	stringBuilder.append(string[i]);
+            }
+
+            jsConsole.writeLine(stringBuilder);
+		}
+	</script>
+</body>
+</html>

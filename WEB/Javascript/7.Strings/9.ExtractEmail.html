@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>ExtractEmail</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<div id = "js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		 var text = " dura bura @telerik.com a@a.b adadad@ pesho@btv.com";
+		 var re = /(\w+)(\w+)@(\w+)(\w+)\.(\w+)(\w+)/ig;	
+		 var emails = text.match(re);
+
+		 for(var i in emails) {
+	 		jsConsole.writeLine(emails[i]);
+		 }
+	</script>
+</body>
+</html>

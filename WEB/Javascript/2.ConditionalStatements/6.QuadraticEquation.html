@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>QuadraticEquation</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<input type="text" id="a" placeholder = "a"/>
+	<input type="text" id="b" placeholder = "b"/>
+	<input type="text" id="c" placeholder = "c"/>
+	<button onclick = "QuadraticEquation()">Find roots</button>
+	<div id = "js-console"></div>
+	<script>
+		function QuadraticEquation() {
+			var a = jsConsole.readFloat("#a");
+			var b = jsConsole.readFloat("#b");
+			var c = jsConsole.readFloat("#c");
+			var D = (b * b) - (4 * a * c);
+	        var x1 = -(b - Math.sqrt(D)) / 2 * a;
+	        var x2 = -(b + Math.sqrt(D)) / 2 * a;
+	        var x = -b / (2 * a);
+	        if (D > 0)
+	        {
+	            jsConsole.writeLine("The equation have 2 roots and they are:" + x1 + " and " + x2);
+	        }
+	        else if (D == 0)
+	        {
+	            jsConsole.writeLine("The equation have 1 root and he is:" + x);
+	        }
+	        else
+	        {
+	            jsConsole.writeLine("There are no real roots!");
+	        } 
+		};
+	</script>
+	<script src="scripts/js-console.js"></script>
+</body>
+</html>

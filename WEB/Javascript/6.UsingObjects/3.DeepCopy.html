@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>DeepCopy</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<div id = "js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+
+		function clone (obj) {
+			if (obj == null || typeof obj != "object") {
+				return obj;
+			}
+
+			if (obj instanceof Date) {
+				var copy = new Date();
+				copy.setTime(obj.getTime());
+				return copy;
+			}
+
+			if (obj instanceof Array) {
+				var copy = [];
+				for (var i = 0; i < obj.length; i++) {
+					copy[i] = clone(obj[i]);
+				};
+				return copy;
+			}
+
+			if (obj instanceof Object) {
+				var copy = {};
+				for(var attr in obj) {
+					if (obj.hasOwnProperty(attr)) {
+						copy[attr] = clone(obj[attr]);
+					}
+				}
+				return copy;
+			}
+		 	throw new Error("Unable to copy obj! Its type isn't supported.");
+		}	
+
+		function student(name, age) {
+			this.name = name;
+			this.age = age;
+			this.toString = function () {
+				return "Name: " + this.name + "\nage: " + this.age;
+			}
+		}	
+
+		var goshko = new student("Goshko",22);
+		jsConsole.writeLine(goshko);
+		
+		var pesho = clone(goshko);
+		jsConsole.writeLine(pesho);
+
+	</script>
+</body>
+</html>

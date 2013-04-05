@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>ParseURL</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<p>http://www.devbg.org/forum/index.php</p>
+	<div id = "js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		var url = document.querySelector('p').innerHTML;
+		var protocol = url.substr(0, url.indexOf(":"));
+		var server = url.substr(url.indexOf(":") + 3, url.indexOf("/", url.indexOf(":") + 3) - 7);
+		var resource = url.substr(url.indexOf("/", url.indexOf(":") + 3) + 1);
+		var JSON = {"protocol": protocol, "server": server, "resource": resource};
+		for(var prop in JSON) {
+			jsConsole.write(prop+": ");
+			jsConsole.writeLine(JSON[prop]);
+		}
+	</script>
+</body>
+</html>

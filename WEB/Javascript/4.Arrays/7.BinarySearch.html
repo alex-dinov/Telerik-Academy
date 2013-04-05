@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title>BinarySearch</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<p>Please enter in textbox sequence of numbers divided by space e.g. 2 10 3 5...</p>
+	<input type="text" id = "numbers" placeholder = "numbers">
+	<p>Enter number from previous entered before numbers,
+		that you want to search for his index</p>
+	<input type="text" id = "number" placeholder = "number">
+	<button onclick = "BinarySearch()">Search for a index</button>
+	<div id = "js-console"></div>	
+	<script>
+		function BinarySearch() {
+			
+			var numbers = document.getElementById('numbers');
+			var value = numbers.value;
+			var arr = value.split(" ");
+
+			function orderBy(a,b) {
+				return (a - b);
+			};
+			arr.sort(orderBy);
+
+			var number = jsConsole.readInteger("#number");
+			var min = 0;
+			var max = arr.length - 1;
+			var index = BinarySearchAlgorithm(arr,number, min, max);
+
+
+			jsConsole.writeLine("The index of the element is: " + index);
+
+		};
+
+		function BinarySearchAlgorithm (arr,key, min, max) {
+
+			while(max >= min) {
+				var middle = parseInt((min + max )/ 2);
+				if (arr[middle] == key) {
+					return middle;
+				}
+				else if(arr[middle] < key) {
+					min = middle + 1;
+				}
+				else {
+					max = middle - 1;
+				}
+			}
+		};
+	</script>
+	<script src="scripts/js-console.js"></script>
+</body>
+</html>

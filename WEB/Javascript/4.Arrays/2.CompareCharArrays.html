@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>CompareCharArrays</title>
+</head>
+<body>
+	<p></p>
+	<script>
+		var p = document.querySelector("p");
+		var arrOne= new Array("d","g","e","a");
+		var arrTwo= new Array("s","g","e","a");
+		var areEqual = true;
+
+		if (arrOne.length == arrTwo.length) {
+			for (var i = 0; i < arrOne.length; i++) {
+				if (arrOne[i] != arrTwo[i]) {
+					areEqual = false;
+				}
+			}
+			p.innerHTML = "Arrays equal: " + areEqual;
+		}
+		else {
+			areEqual = false;
+			p.innerHTML = "Arrays equal: " + areEqual;
+		}
+
+	</script>
+</body>
+</html>

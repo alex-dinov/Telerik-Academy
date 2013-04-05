@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>BiggerThanNeighboursHarder</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<p></p>
+	<button onclick = "BiggerThanNeighboursHarder()">Check the index of the first element in array that is bigger than its neighbors, or -1, if there’s no such element.</button>
+	<div id = "js-console"></div>
+	<script>
+		function BiggerThanNeighboursHarder() {
+			var p = document.querySelector("p");
+			var arr = [0, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3];
+
+	        jsConsole.writeLine("The index of the first element bigger than its neighbours is " + CheckNeighbours(arr));
+
+			function CheckNeighbours(arr) {
+				for (var i = 0; i < arr.length; i++)
+	        	{
+	           		if (arr.length==1)
+		            {
+		                return -1;
+		            }
+		            if (i > 0 && i < arr.length - 1 && arr[i] > arr[i - 1] && arr[i] > arr[i + 1])
+		            {
+		                return i;
+		            }
+		            if (i == 0 && arr[i] > arr[i + 1])
+		            {
+		                return i;
+		            }
+		            if (i == arr.length - 1 && arr[i] > arr[i - 1])
+		            {
+		                return i;
+		            }          
+	        	}
+	        	return -1;
+        	}
+		}
+	</script>
+	<script src="scripts/js-console.js"></script>
+</body>
+</html>

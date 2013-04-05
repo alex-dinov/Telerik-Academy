@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>CheckForPropery</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<div id = "js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function hasProperty (obj, property) {
+			for(var prop in obj) {
+				if (prop === property) {
+					return true;
+				}
+			}
+			return false;
+		}
+
+		var obj = window;
+		var hasProp = hasProperty(obj, "length");
+
+		jsConsole.writeLine("The object has the given property: " + hasProp);
+	</script>
+</body>
+</html>

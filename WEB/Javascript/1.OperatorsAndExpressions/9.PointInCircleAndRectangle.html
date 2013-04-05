@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>PointInCircleAndRectangle</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<input type="text" id="x" placeholder = "x" />
+	<input type="text" id="y" placeholder = "y" />
+	<button onclick ="PointInCircleAndRectangle()">Is point in circle and rectangle</button>
+	<div id="js-console"></div>
+	<script>
+		function PointInCircleAndRectangle(){
+			var x =jsConsole.readFloat("#x");
+			var y =jsConsole.readFloat("#y");
+			var xForCircle = Math.abs(x-1);
+			var yForCircle = Math.abs(y-1);
+			var inCircle = false;
+			var inRectangle = false;
+
+			if (Math.sqrt(xForCircle * xForCircle + yForCircle * yForCircle) <= 3)
+				inCircle = true;
+			if (x >= -1 && x <= 5 && y <= 1 && y >= -1)
+				inRectangle = true; 
+			if (inCircle && !inRectangle)
+	        {
+	            jsConsole.writeLine("The point is IN the circle and OUT of the rectangle");
+	        }
+	        else if (!inCircle && inRectangle)
+	        {
+	            jsConsole.writeLine("The point is OUT of the circle and IN the rectangle ");
+	        }
+	        else if (inCircle && inRectangle)
+	        {
+	            jsConsole.writeLine("The point is IN the circle and IN the rectangle ");
+	        }
+	        else
+	        {
+	            jsConsole.writeLine("The point is OUT of the circle and OUT of the rectangle ");
+	        }
+	    };
+	</script>
+	<script src="scripts/js-console.js"></script>
+</body>
+</html>

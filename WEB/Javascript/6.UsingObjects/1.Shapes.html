@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>Shapes</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<div id = "js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+
+		function Point(x,y) {
+			this.x = x;
+			this.y = y;
+		}
+
+		function Line (p1,p2) {
+			this.p1 = p1;
+			this.p2 = p2;
+		}
+
+		function CalcDistance (p1,p2) {
+			return Math.sqrt(((p1.x-p2.x)*(p1.x-p2.x))+((p1.y-p2.y)*(p1.y-p2.y)));
+		}
+
+		function IsTriangle (l1, l2, l3) {
+			var segment1 = CalcDistance(l1.p1,l1.p2);
+			var segment2 = CalcDistance(l2.p1,l2.p2);
+			var segment3 = CalcDistance(l3.p1,l3.p2);
+
+			return segment1 + segment2 > segment3 && segment1 + segment3 > segment2 && segment2 + segment3 > segment1;
+		}
+
+		var a = new Point(0,1);
+		var b = new Point(3,4);
+		var c = new Point(2,5);
+		jsConsole.writeLine("The distance between the points is " + CalcDistance(a,b));
+
+		var line1 = new Line(a,b);
+		var line2 = new Line(a,c);
+		var line3 = new Line(b,c);
+
+		jsConsole.writeLine("The three segment lines can form a triangle:" + IsTriangle(line1, line2, line3));
+	</script>
+</body>
+</html>

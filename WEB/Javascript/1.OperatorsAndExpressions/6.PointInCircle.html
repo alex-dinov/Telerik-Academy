@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>PointInCircle</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<input type="text" id="x" placeholder = "x" />
+	<input type="text" id="y" placeholder = "y" />
+	<button onclick ="PointInCircle()">Is Point in Circle</button>
+	<div id="js-console"></div>
+	<script>
+		function PointInCircle(){
+			var x =jsConsole.readInteger("#x");
+			var y =jsConsole.readInteger("#y");
+			if (Math.sqrt(x*x+y*y) <= 5)
+				jsConsole.writeLine("The point is IN a circle K(0,5)");
+			else jsConsole.writeLine("The point is OUT of a circle K(0,5)");
+		};
+	</script>
+	<script src="scripts/js-console.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>BiggerThanNeighbours</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<p></p>
+	<input type="text" id="position" placeholder="position">
+	<button onclick = "BiggerThanNeighbours()">Check if the element at given position in given array of integers is bigger than its two neighbors (when such exist).</button>
+	<div id = "js-console"></div>
+	<script>
+		function BiggerThanNeighbours() {
+			var position = jsConsole.readInteger('#position')
+			var p = document.querySelector("p");
+			var arr = [4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3];
+
+			CheckNeighbours(arr, position);
+
+			function CheckNeighbours(arr, position) {
+				for (var i = 0; i < arr.length; i++)
+	        	{
+		            if (arr.length == 1)
+		            {
+		                jsConsole.writeLine("The element is NOT bigger than its neighbours!");
+		                return;
+		            }
+		            if (i==position)
+		            {
+		                if (i > 0 && i < arr.length-1 && arr[i] > arr[i - 1] && arr[i] > arr[i + 1])
+		                {
+		                    jsConsole.writeLine("The element is bigger than its neighbours!");
+		                    return;
+		                }
+		                if (position==0 && arr[i] > arr[i+1])
+		                {
+		                    jsConsole.writeLine("The element is bigger than its neighbours!");
+		                    return;
+		                }
+		                if (position==arr.length-1 && arr[i] > arr[i-1])
+		                {
+		                    jsConsole.writeLine("The element is bigger than its neighbours!"); 
+		                    return;
+		                }
+		            }
+	        	}
+	        	jsConsole.writeLine("The element is NOT bigger than its neighbours!");
+        	}
+		}
+	</script>
+	<script src="scripts/js-console.js"></script>
+</body>
+</html>

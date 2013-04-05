@@ -1,0 +1,80 @@
+body ,div,ul,li,a {
+	margin: 0;
+	padding: 0;
+}
+
+.linear-gradient(@from-color,@to-color,@from-pos,@to-pos) {
+    background: -moz-linear-gradient(top, @from-color @from-pos, @to-color @to-pos); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(@from-pos,@from-color), color-stop(@to-pos,@to-color)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, @from-color @from-pos,@to-color @to-pos); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, @from-color @from-pos,@to-color @to-pos); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, @from-color @from-pos,@to-color @to-pos); /* IE10+ */
+    background: linear-gradient(to bottom, @from-color @from-pos,@to-color @to-pos); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@from-color', endColorstr='@to-color',GradientType=0 ); /* IE6-9 */
+}
+
+body {
+	font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+	font-size: 16px;
+	div#wrapper {
+		div.select-list {
+			margin: 25px;
+			ul.all-items {
+				.linear-gradient(#8168FF,#fff,0%,100%);
+				width: 150px;
+				border-radius: 5px;
+				list-style-type: none;
+				overflow: -moz-scrollbars-vertical; 
+				overflow-y: scroll;
+				height: 200px;
+				float: left;
+
+				li {
+					border-bottom: 1px solid black;
+					padding: 5px 10px;
+					padding-left: 15px;
+					&:last-of-type{
+						border:none;
+					}
+					&:first-letter {
+						text-decoration: underline;
+					}
+				}
+				li.selected {
+					background-color: #6C4EFF;
+				}
+			}
+			a {
+				float: left;
+				margin-top: 90px;
+				padding: 0 2px;
+				margin: 90px 1px;
+
+			}
+			ul.selected-items {
+				.linear-gradient(#8168FF,#fff,0%,100%);
+				width: 150px;
+				border-radius: 5px;
+				list-style-type: none;
+				overflow: -moz-scrollbars-vertical; 
+				overflow-y: scroll;
+				height: 200px;
+				float: left;
+				li {
+					border-bottom: 1px solid black;
+					padding: 5px 10px;
+					padding-left: 15px;
+					&:last-of-type{
+						border:none;
+					}
+					&:first-letter {
+						text-decoration: underline;
+					}
+				}
+				li.selected {
+					background-color: #6C4EFF;
+				}
+			}
+		}
+	}
+}

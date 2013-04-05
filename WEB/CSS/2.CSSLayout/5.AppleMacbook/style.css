@@ -1,0 +1,69 @@
+header, ul, li, aside, section, legend {
+	padding: 0;
+	margin: 0;
+}
+body {
+	font-family: Calibri, sans-serif;
+}
+
+	#wrapper {
+		width: 55%;
+		line-height: 40px;
+		vertical-align: middle;
+	}
+
+	.clearFix:after {
+		content: "";
+		display: block;
+		clear: both;
+		height: 0;
+	}
+
+	header {
+		border-bottom: 1px solid #393939;
+		font-size: 1.5em;
+	}
+		#nav {
+			text-align: center;
+			list-style-type: none;
+			padding: 2px;
+		}
+			#nav li {
+				display: inline-block;
+			}
+				#nav li a {
+				color: #00ACF0;
+				font-weight: bold;
+			}
+	
+	section, aside {
+		float: left;
+	}
+	
+	section{
+		width: 65%;
+		margin: 5px; 
+		padding: 0 0 5px 5px;
+	}
+		section fieldset {
+			width: 43%;
+			float: left;
+		}
+			section fieldset ul {
+				list-style-type: none;
+				display: inline-block;
+			}
+		
+	aside {
+		padding-top: 100px;
+		width: 26%; 
+	}
+		aside ul {
+			list-style-type: none;
+			width: 65%;
+		}
+
+			aside ul li {
+				display: inline-block;
+			}
+		

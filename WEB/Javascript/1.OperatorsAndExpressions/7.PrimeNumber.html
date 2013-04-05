@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>PrimeNumber</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<input type="text" id="number" placeholder = "number" />
+	<button onclick ="PrimeNumber()">Is Prime Number</button>
+	<div id="js-console"></div>
+	<script>
+		function PrimeNumber(){
+			var number = jsConsole.readInteger("#number");
+			var sieve = new Array(100);
+			sieve[0] = sieve[1] = true;
+			for (var i = 2; i < Math.sqrt(sieve.length); i++) {
+				if (sieve[i] == true)  continue;
+				for (var j = 2 * i; j < sieve.length; j += i) {
+					sieve[j] = true
+				}
+			}
+			if (sieve[number] != true) jsConsole.writeLine("Prime");
+			else jsConsole.writeLine("NOT Prime");
+		}
+	</script>
+	<script src="scripts/js-console.js"></script>
+</body>
+</html>

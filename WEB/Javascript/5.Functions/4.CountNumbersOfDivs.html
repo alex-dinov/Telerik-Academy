@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>CountNumbersOfDivs</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div id = "js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+	
+		CountNumbersOfDivs();
+
+		function CountNumbersOfDivs() {
+			var count = document.getElementsByTagName('div').length;
+			jsConsole.writeLine("There is " + count + " divs on the web page");
+		}
+	</script>
+</body>
+</html>

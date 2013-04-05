@@ -1,0 +1,71 @@
+table, th, td {
+border:1px solid #ccc;
+border-collapse:collapse;
+text-align:left;
+padding:5px 0px 5px 7px;
+font-size:12px;
+font-family:sans-serif;
+font-weight:normal;
+}
+.head1 {
+background-color:#E7E9EB;
+padding:4px;
+}
+.head2 {
+background-color:#E7E9EB;
+}
+.head3 {
+background-color:#DFE3E8;
+}
+#id {
+width:25px;
+}
+#productID {
+width:70px;
+}
+#name {
+width:140px;
+}
+#productName {
+width:238px;
+}
+.unit {
+width:150px;
+}
+#price ,#units ,#dc {
+width:80px;
+}
+#quantity {
+width:90px;
+}
+input[type="image"] {
+vertical-align:-6px;
+}
+#stock {
+width:170px;
+}
+.footer {
+background-color:#DFE3E8;
+padding:4px;
+}
+.img {
+padding:0px 3px;
+}
+a {
+text-decoration:none;
+color:#000;
+padding:4px 3px;
+}
+#items {
+float:right;
+padding:4px 2px;
+}
+#ps {
+margin-left:12px;
+}
+#begin {
+margin-left:7px;
+}
+#first {
+border:1px solid red;
+}

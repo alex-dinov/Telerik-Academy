@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>Images</title>
+	<style>
+		#container {
+			background: url(shadow.png) no-repeat;
+			width: 800px;
+			height: 600px;
+			margin:0 auto;
+		}
+
+		#main {
+			background: url(leaf.jpg) no-repeat;
+			background-size: 500px 399px;
+			height: 600px;
+			width: 600px;
+			margin-left: 50px;
+			position: absolute;
+			top: 59px;
+		}
+
+		.aside {
+			background: url(mountain.jpg) no-repeat;
+			background-size: 150px 100px;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			margin-left: 600px;
+		}
+
+		#first {
+			margin-top: 50px;
+		}
+
+		#second {
+			margin-top: 200px;
+		}
+
+		#third {
+			margin-top: 350px;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="main"></div>
+		<div id="first" class="aside"></div>
+		<div id="second" class="aside"></div>
+		<div id="third" class="aside"></div>
+	</div>
+</body>
+</html>

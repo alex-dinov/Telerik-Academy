@@ -1,0 +1,23 @@
+body {
+	background: #E1EDEC; 
+	font: 16px Verdana;
+	color: #333;
+}
+div#wrapper	{
+	width: 780px;
+	margin: auto;
+}
+div#info {
+	float: right;
+	margin-top: 80px;
+}
+div#info > div {
+	margin-top: 15px; 
+}
+span {
+	font-weight: bold;
+	font-size: 22px;
+}
+img {
+	margin-bottom: -5px;
+}

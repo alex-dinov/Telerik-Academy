@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title></title>
+</head>
+<body>
+	<script>
+		function Solve (args) {
+			var line = "";
+			for (var i = 0; i < args.length; i++) {
+				line += args[i];
+			}
+			var terrain = line.split(", ");
+			var visited = new Array(terrain.length);
+			for (var i = 0; i < terrain.length; i++) {
+				terrain[i] = parseInt(terrain[i]);
+				visited[i] = false;
+			}
+
+			var maxStep = terrain.length;
+			var bestLength = 1;
+			for (var i = 0; i < terrain.length; i++) {
+				var index = i;
+				var currentRabbit = terrain[index];
+				visited[index] = true;
+				var step = 1;
+				var length = 1;
+				if (index + step >= terrain.length) {
+					var temp = index + step; 
+					index = temp - terrain.length;
+				}
+				else {
+					index += step;
+				}
+				var nextJump = terrain[index];
+				while(maxStep >= step) {
+					
+
+					if (currentRabbit < nextJump) {
+						if (visited[index]) {
+							break;
+						}
+						length++;
+						
+						if (length > bestLength) {
+							bestLength = length;
+						}
+					}
+					else {
+						step++;
+						length = 1;
+						index = i;
+						currentRabbit = terrain[index];
+						visited[index] = true;
+						if (index + step >= terrain.length) {
+							var temp = index + step; 
+							index = temp - terrain.length;
+						}
+						else {
+							index += step;
+						}
+						var nextJump = terrain[index];
+						for (var k = 0; k < terrain.length; k++) {
+							visited[k] = false;
+						}
+					}
+
+					visited[index] = true;
+					currentRabbit = nextJump;
+					if (index + step > terrain.length) {
+						var temp = index + step; 
+						index = temp - terrain.length;
+					}
+					else {
+						index += step;
+					}
+					nextJump = terrain[index];
+				}
+				for (var j = 0; j < terrain.length; j++) {
+					visited[j] = false;
+				}
+			}
+
+			return bestLength;
+		}
+
+
+		console.log(Solve(["1, 1, 1"]));
+	</script>
+</body>
+</html>

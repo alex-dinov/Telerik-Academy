@@ -1,0 +1,93 @@
+body,div ,ul ,li ,fieldset,legend,select,textarea,button,label {
+
+	margin:0;
+	padding: 0;
+}
+
+.linear-gradient(@from-color,@to-color,@from-pos,@to-pos) {
+    background: -moz-linear-gradient(top, @from-color @from-pos, @to-color @to-pos) fixed; /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(@from-pos,@from-color), color-stop(@to-pos,@to-color)) fixed; /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, @from-color @from-pos,@to-color @to-pos) fixed; /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, @from-color @from-pos,@to-color @to-pos) fixed; /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, @from-color @from-pos,@to-color @to-pos) fixed; /* IE10+ */
+    background: linear-gradient(to bottom, @from-color @from-pos,@to-color @to-pos) fixed; /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@from-color', endColorstr='@to-color',GradientType=0 ) fixed; /* IE6-9 */
+}
+
+body {
+	font-size: 16px;
+  	color: #333333;
+
+  	div#wrapper {
+  		margin-top: 10px;
+  		margin-left: 15px;
+  		#popup-box{
+  			list-style: none;
+  			li.popup-item {
+  				border-top: 1px solid black;
+  				padding-top: 5px;
+  				padding-bottom: 7px;
+  				width: 105px;
+  				padding-left: 5px;
+  				position: relative;
+  				&:last-of-type {
+  					border-bottom: 1px solid black;
+  				}
+		  		>div.invisible {
+		  			display: none;	
+		  		}
+		  		>div {
+		  				display: inline-block;
+		  				position: absolute;
+	  				 	left: 120px;
+						top: 0;
+						width: 200px;
+						fieldset {
+							
+							border: 1px solid black;
+							text-align: left;
+							padding:15px; 
+							legend {
+								font-weight: bold;
+								font-size: 1.2em;
+								padding: 2px;
+							}
+
+							button {
+								padding: 5px 10px;
+								border-radius: 15px;
+								border: none;
+								.linear-gradient(#C9C9C9,#696969,0%,100%);
+								color: black;
+								&:hover {
+									background:#ccc;
+								}
+
+							}
+						}
+						a {
+							position: absolute;
+							right: 6px;
+							top: 18px;
+							width: 17px;
+							border: 1px solid black;
+							border-radius: 5px;
+							text-align: center;
+						}
+
+		  		}
+		  		a {
+		  			color:black;
+		  			text-decoration: none;
+		  			span.current {
+		  				font-weight: bold;
+		  			}
+
+		  			img {
+		  				width: 25px;
+		  			}
+		  		}
+	  		}
+	  	}
+  	}
+}

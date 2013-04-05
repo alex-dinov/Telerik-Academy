@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>FormatString</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<div id = "js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+
+ 		function stringFormat (str) {
+ 			var index = str.indexOf("{");
+ 			var result = new String();
+ 			var counter = 0;
+ 			var args = new String();
+ 			for (var i = 1; i < arguments.length; i++) {
+ 				args += arguments[i] + ",";
+ 			}
+ 			args = args.split(",");
+ 			while(index != -1) {
+				var argNumber = parseInt(str.substr(index + 1, 1));
+				result += str.substr(counter, index) + args[argNumber];
+				counter = index + 3;
+				result += str.substr(counter, index);
+				index = str.indexOf("{", index + 1);
+ 			}
+ 			return result;
+ 		}
+
+ 		var str = stringFormat("Hello {0}!","Peter");
+ 		jsConsole.writeLine(str);
+
+	</script>
+</body>
+</html>

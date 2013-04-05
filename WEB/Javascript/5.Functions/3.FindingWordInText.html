@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>FindingWordInText</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<input type="text" id="word" placeholder="word">
+	<button onclick = "FindingWordInText()">Find word in the text</button>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum . Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's lorem ipsum is simply dummy text of the printing and typesetting industry</p>
+	<div id = "js-console"></div>
+	<script>
+		function FindingWordInText() {
+			var word = jsConsole.read('#word');
+			var text = document.querySelector("p");
+			text = text.innerHTML;
+			var caseSensitive = false;
+			var count = 0;
+
+			CountWordInText(text, word);
+			CountWordInText(text, word, true);
+
+			function CountWordInText(text, word, caseSensitive) {
+				caseSensitive = caseSensitive || false;
+
+				if (!caseSensitive) {
+					var wordInText = text.indexOf(word);
+
+                	while (wordInText >= 0) {
+                    count++;
+                    wordInText = text.indexOf(word, wordInText+1);
+					}
+					jsConsole.writeLine("There is " + count + " '"+ word + "' in case sensitive search");
+				}
+
+				else {
+					count = 0;
+					var wordInText = text.split(" ");
+					for (var i = 0; i < wordInText.length; i++) {
+						if (word.toLowerCase() === wordInText[i].toLowerCase()) {
+							count++;
+						}
+					}
+					jsConsole.writeLine("There is " + count + " '"+ word + "' in case insensitive search");
+				}
+			}
+		}
+	</script>
+	<script src="scripts/js-console.js"></script>
+</body>
+</html>

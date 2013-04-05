@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title></title>
+</head>
+<body>
+	<script>
+		function Solve (args) {
+			var input = args[0];
+			var arr = [];
+			arr.push("-!");
+			arr.push("**");
+			arr.push("!!!");
+			arr.push("&&");
+			arr.push("&-");
+			arr.push("!-");
+			arr.push("*!!!");
+			arr.push("&*!");
+			arr.push("!!**!-");
+			var string = "";
+			var numbers = [];
+			for (var i = 0; i < input.length; i++) {
+				string += input[i];
+				if (check(string)) {
+					numbers.push(getValue(string));
+					string = "";
+				}
+			}
+			var sum = 0;
+			for (var i = 0; i < numbers.length; i++) {
+				sum = sum * 9 + numbers[i];
+			}
+
+			return sum;
+
+			function check (string) {
+				for (var i = 0; i < arr.length; i++) {
+					if (arr[i] === string) {
+						return true;
+					}
+				}
+			}
+
+			function getValue (string) {
+				var number;
+				for (var i = 0; i < arr.length; i++) {
+					if (arr[i] === string) {
+						number = i;
+						return number
+					}
+				}
+			}
+		}
+
+		console.log(Solve(["!!**!--!!-"]));
+	</script>
+</body>
+</html>

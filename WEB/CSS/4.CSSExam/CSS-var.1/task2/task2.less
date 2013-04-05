@@ -1,0 +1,123 @@
+body , div, ul, li, a ,table ,thead,tr,td ,th,tbody {
+	margin: 0;
+	padding: 0;
+}
+.linear-gradient(@from-color,@to-color,@from-pos,@to-pos) {
+    background: -moz-linear-gradient(top, @from-color @from-pos, @to-color @to-pos); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(@from-pos,@from-color), color-stop(@to-pos,@to-color)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, @from-color @from-pos,@to-color @to-pos); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, @from-color @from-pos,@to-color @to-pos); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, @from-color @from-pos,@to-color @to-pos); /* IE10+ */
+    background: linear-gradient(to bottom, @from-color @from-pos,@to-color @to-pos); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@from-color', endColorstr='@to-color',GradientType=0 ); /* IE6-9 */
+}
+.clearfix {
+   zoom:1;
+	&:after {
+   	content: ""; 
+  	 display: block; 
+   	clear: both; 
+   	height: 0; 
+	}
+}
+
+body {
+	font-family: Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
+	font-size: 16px;
+
+	div#wrapper {
+
+		ul.tab-strip {
+			border: 1px solid black;
+			margin: 15px;
+			width: 340px;
+			height: 230px;
+			border-radius: 5px;
+			&:first-child+li+li {
+				margin-bottom: 20px;
+			}
+			li {
+				display: inline-block;
+				padding: 5px 15px;
+				border-right: 1px solid black;
+				.linear-gradient(#EDEDED,#ABABAB,0%,100%);
+				border-radius: 5px;
+				border-bottom: 1px solid black;
+				a.tab-btn{
+					text-decoration: none;
+					color: black;
+					font-size: 1.4em;
+
+				}
+				&:last-of-type {
+					border-right: none;
+				}
+				
+				& > div.tab-content {
+					display: none;
+					ul {
+						list-style-type:disc;
+						background: #fff;
+						margin-left: 5px;
+						margin-top: 19px;
+						li {
+							display: block;
+							background: #fff;
+							border: none;
+							margin: 0;
+							padding: 0;
+							ul {
+								list-style-type:lower-alpha;
+								margin: 0 25px;
+							}
+						}
+					}
+					table {
+						margin: 19px -79px;
+						border: 1px solid black;
+						border-collapse: collapse;
+						thead {
+							.linear-gradient(#ababab,#EEEEEE,0%,80%);
+							tr {
+							
+								th {
+									border: 1px solid black;
+									padding: 5px 15px;
+								}
+							}
+						}
+						tbody {
+							background: #eee;
+							tr {
+							
+								td {
+									border: 1px solid black;
+									padding: 5px 25px 5px 5px;
+								}
+							}
+						}
+					}
+				}
+				&:hover {
+					background: #eee;
+				}
+
+			}
+			li.current {
+				background: #fff;
+				border-bottom: none;
+				border-radius: 0;
+
+				& > div.tab-content {
+					display: inline-block;
+					position: absolute;
+
+				}
+				a.tab-btn {
+					font-weight: bold;
+
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title></title>
+</head>
+<body>
+	<script>
+		function Solve (args) {
+			var n = args[0];
+			var arr = new Array(168);
+
+			var bigOne = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			var littleOne = "abcdefghijklmnopqrstuvwxyz";
+			for (var i = 0; i < 26; i++) {
+				arr[i] = bigOne[i];
+			}
+			var counterLittleOne = 0;
+			var counterBigOne = 0;
+			for (var i = 26; i < arr.length; i++) {
+				arr[i] = littleOne[counterLittleOne] + bigOne[counterBigOne];
+				counterBigOne++;
+				if (counterBigOne == 26) {
+					counterBigOne = 0;
+					counterLittleOne++;
+				}
+			}
+
+			var string = "";
+			var numbers = [];
+			var number;
+			for (var i = 0; i < n.length; i++) {
+				string += n[i];
+				if (check(string)) {
+					numbers.push(getValue(string,number));
+					string = "";
+				}
+			}
+			var sum = 0;
+			for (var i = 0; i < numbers.length; i++) {
+				sum = sum * 168 + parseInt(numbers[i]);
+			}
+
+			return sum;
+
+			function getValue (string, number) {
+				for (var i = 0; i < arr.length; i++) {
+					if(string === arr[i]) {
+						number = i;
+						return number;
+					}
+				}
+			}
+
+			function check (string) {
+				for (var i = 0; i < arr.length; i++) {
+					if(string === arr[i]) {
+						return true;
+					}
+				}
+				return false;
+			}
+		}
+
+		console.log(Solve(["CfI"]));
+	</script>
+</body>
+</html>

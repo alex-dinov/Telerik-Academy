@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>FindRepeatedNumber</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<p></p>
+	<input type="text" id="number" placeholder="number">
+	<button onclick = "FindRepeatedNumber()">Find how many times given number appears in given array</button>
+	<div id = "js-console"></div>
+	<script>
+		function FindRepeatedNumber() {
+			var number = jsConsole.readInteger('#number')
+			var p = document.querySelector("p");
+			var arr = [4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3];
+			var count = 0;
+			for (var i = 0; i < arr.length; i++) {
+				if (number === arr[i]) {
+					count++;
+				}
+			}
+			jsConsole.writeLine("The number appears " + count +" times in the given array");
+		}
+	</script>
+	<script src="scripts/js-console.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>ReplaceNonBreakingWhiteSpaces</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<p>We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.
+	</p>
+	<div id = "js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		var text = document.querySelector('p').innerHTML;
+		var result = "";
+		for (var i = 0; i < text.length; i++) {
+			if (text[i] == " ") {
+				result += "&nbsp";
+			}
+			else {
+				result += text[i];
+			}
+		}
+		
+		jsConsole.writeLine(result);
+	</script>
+</body>
+</html>

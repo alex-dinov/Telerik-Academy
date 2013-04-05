@@ -1,0 +1,19 @@
+<html>
+<head>
+	<meta charset="UTF-8">	
+	<title>ExtractHTML</title>
+</head> 
+<body> 
+	<iframe src="6.Test.html" id="iframe" style = "display:none;"></iframe>
+	<input type="button" value="Get Content" onclick="ExtractHTML();" />
+	<div id="contents"></div>
+	<script language="javascript"> 
+		//TODO: Fix it in Chrome
+		function ExtractHTML() {
+			var html = document.getElementById('iframe').contentWindow.document.body.innerHTML;
+			var content = html.replace(/(<([^>]+)>)/ig,""); 
+			document.getElementById('contents').innerHTML = content;
+		}
+	</script> 
+</body> 
+</html>

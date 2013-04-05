@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>NumberInEnglish</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<input type="text" id="number" placeholder = "number"/>
+	<button onclick = "NumberInEnglish()">Number in english</button>
+	<div id = "js-console"></div>
+	<script>
+		function NumberInEnglish() {
+			var number = jsConsole.readInteger("#number");
+			var specials = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven",
+                             "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen",
+                             "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+            var tens = ["Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+
+            var firstDigit = parseInt(number / 100);
+	        var secondDigit = parseInt(number / 10);
+	        var digitHundreds = parseInt((number % 100) / 10);
+	        var firstDigitHundreds = parseInt(number % 100);
+	        var thirdDigit = parseInt(number % 10);
+
+	        if (number >= 0 && number < 20)
+	        {
+	            jsConsole.writeLine(specials[number]);
+	        }
+	        else if (number > 19 && number < 100)
+	        {
+	            if (number % 10 == 0)
+	            {
+	                jsConsole.writeLine(tens[secondDigit - 2]);
+	            }
+	            else
+	            {
+	                jsConsole.writeLine(tens[secondDigit - 2] + " " + specials[thirdDigit]);
+	            }
+	        }
+	        else if (number > 99 && number < 1000)
+	        {
+	            if (firstDigitHundreds == 0)
+	            {
+	                jsConsole.writeLine(specials[firstDigit] + " Hundred" );
+	            }
+	            else if (firstDigitHundreds > 0 && firstDigitHundreds < 20)
+	            {
+	                jsConsole.writeLine(specials[firstDigit] + " Hundred " + "and " + specials[firstDigitHundreds]);
+	            }
+	            else if (thirdDigit == 0)
+	            {
+	                jsConsole.writeLine(specials[firstDigit] + " Hundred " + tens[digitHundreds - 2]  );
+	            }
+	            else
+	            {
+	                jsConsole.writeLine(specials[firstDigit] + " Hundred " + tens[digitHundreds - 2] + " " + specials[thirdDigit]);
+	            }
+	        }
+		};
+	</script>
+	<script src="scripts/js-console.js"></script>
+</body>
+</html>

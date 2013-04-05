@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>FindBit3</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<input type="text" id="number" />
+	<button onclick ="FindBit3()">FindBit3</button>
+	<div id="js-console"></div>
+	<script>
+		function FindBit3(){
+			var number =jsConsole.readInteger("#number");
+			var bit = ((number & 8) != 0);
+			if (bit) jsConsole.writeLine("The third bit is 1");
+			else jsConsole.writeLine("The third bit is 0"); 
+		};
+	</script>
+	<script src="scripts/js-console.js"></script>
+</body>
+</html>

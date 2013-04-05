@@ -1,0 +1,93 @@
+body , div, header,nav,ul ,li ,a {
+	margin: 0;
+	padding: 0;
+}
+
+.linear-gradient(@from-color,@to-color,@from-pos,@to-pos) {
+    background: -moz-linear-gradient(top, @from-color @from-pos, @to-color @to-pos); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(@from-pos,@from-color), color-stop(@to-pos,@to-color)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, @from-color @from-pos,@to-color @to-pos); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, @from-color @from-pos,@to-color @to-pos); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, @from-color @from-pos,@to-color @to-pos); /* IE10+ */
+    background: linear-gradient(to bottom, @from-color @from-pos,@to-color @to-pos); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@from-color', endColorstr='@to-color',GradientType=0 ); /* IE6-9 */
+}
+
+body {
+	font-size: 16px;
+	font-family: Arial;
+	div#wrapper {
+		width: 960px;
+		header {
+			height: 150px;
+			.linear-gradient(#002D44,#77D1FF,0%,100%);
+			padding-top: 50px;
+			nav {
+					
+					padding-left: 45px;
+		  		ul {
+		  			list-style-type: none;
+		  			
+		  			li {
+		  				display: inline-block;
+		  				padding: 5px 10px;
+		  				border: none;
+  						border-width: 1px;
+  						margin-left: 5px;
+  						&:hover {
+  							
+  							border-radius: 15px;
+  							background-color: rgba(0, 79, 119, 0.7);
+  						}
+		  				a {
+		  					text-decoration: none;
+		  					color: black;
+		  					font-size: 2em;
+		  				}
+		  				ul {
+		  					display: none;
+		  					position: absolute;
+		  					left: 45px;
+		  					li{
+		  						
+		  						ul{
+		  							display: none;
+		  							width: 350px;
+		  							left: 0;
+		  							padding: 15px;
+
+									text-align: center;
+									border-radius: 15px;
+									.linear-gradient(#fff,#77D1FF,0%,70%);
+									li {
+										border-top: 1px solid black;
+										padding:5px;
+										margin: 0 2px;
+										&:first-of-type {
+											border-top: none;
+										}
+									}
+		  						}
+		  						&:hover {
+		  								ul {
+		  									display: block;
+
+		  								}
+		  							}
+		  					}
+		  				}
+		  			}
+		  			li.selected {
+		  				.linear-gradient(#143C50,#27566E,0%,100%);
+		  				border-radius: 15px;
+		  				>ul {
+		  					display: block;
+		  					
+		  				}
+		  			}
+		  		}
+
+	  		}
+  		}
+	}
+}

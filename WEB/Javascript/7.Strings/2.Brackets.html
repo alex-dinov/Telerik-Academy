@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>Brackets</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<input type="text" id = "expression" placeholder = "expression">
+	<button onclick = "brackets()">Check for correct brackets</button>
+	<div id = "js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function brackets() {
+			var exp = jsConsole.read('#expression');
+
+			function checkBrackets (exp) {
+				var count = 0;
+		        for (var i = 0; i < exp.length; i++)
+		        {
+		            if (exp[i]==="(")
+		            {
+		                count++;
+		            }
+		            if (exp[i]===")")
+		            {
+		                count--;
+		            }
+		        }
+		        if (count==0)
+		        {
+		            return true;
+		        }
+		        else
+		        {
+		            return false;
+		        }
+
+			}
+			jsConsole.writeLine("The brackets are put correctly: " + checkBrackets(exp));
+		}
+	</script>
+</body>
+</html>

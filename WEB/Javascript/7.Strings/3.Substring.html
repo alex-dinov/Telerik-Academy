@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>Substring</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<p>We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.
+	</p>
+	<div id = "js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function substring(text, substr) {
+			text = text.toLowerCase();
+			substr = substr.toLowerCase();
+			var count = 0;
+			var index = text.indexOf(substr);
+			while(index >= 0) {
+				count++;
+				index = text.indexOf(substr,index + 1);
+			}
+
+			jsConsole.writeLine("The result is: " + count);
+		}
+
+		var text = document.querySelector('p').innerHTML;
+		var substr = "in";
+		substring(text,substr);
+	</script>
+</body>
+</html>

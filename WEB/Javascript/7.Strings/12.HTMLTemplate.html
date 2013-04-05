@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>HTMLTemplate</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<div id = "js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<div data-type="template" id="list-item">
+ 	<strong>-{name}-</strong> <span>-{age}-</span>
+	</div>
+
+	<script>
+
+ 		function createUL(people, template) {
+	    	template = new String(template);
+		    template = template.replace(/<strong>/g, '<li><strong>'); 
+		    template = template.replace(/<\/span>/g, '</span></li>');
+		    var list = new String('<ul>');
+		    for (var i in people) {
+		        var currentLI = template.replace('-{name}-', people[i].name);
+		        currentLI = currentLI.replace('-{age}-', people[i].age);
+		        list += currentLI;
+		    }
+		    list += '</ul>';
+		    return list;
+		}
+
+	    var people = [{ name: "Ivan", age: 13 },
+	              { name: "Petar", age: 14 },
+	              { name: "Gosho", age: 15 }];
+	    var template = document.getElementById("list-item").innerHTML;
+	    var peopleList = createUL(people, template);
+	    jsConsole.writeLine(peopleList);
+
+	</script>
+</body>
+</html>

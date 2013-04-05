@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>Palindromes</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<div id = "js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+ 		var text = "ABBA durabura arab dadadsas 9009 ,lamal sdadd exe";
+		var words = text.split(/[\s\.,-?!)(]/);
+		jsConsole.writeLine("Palindromes: ");
+ 		for (var i = 0; i < words.length; i++) {
+	 		var temp = words[i];
+	 		var checker = new String();
+	 		for (var j = temp.length - 1; j >= 0; j--) {
+	 			checker += temp[j];
+	 		}
+	 		if (checker === words[i]) {
+	 			jsConsole.write(" " + words[i])
+	 		}
+	 	}
+	</script>
+</body>
+</html>

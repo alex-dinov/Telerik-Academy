@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>CheckForPropery</title>
+	<link rel="stylesheet" href="styles/js-console.css">
+</head>
+<body>
+	<div id = "js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function person (firstname, lastname, age) {
+			this.firstname = firstname;
+			this.lastname = lastname;
+			this.age = age;
+			this.toString = function () {
+				return this.firstname + " " + this.lastname;
+			}
+		}
+
+		function group(persons, prop) {
+            var grouped = [];
+            for (var i = 0; i < persons.length; i++) {
+                for (var j in persons[i]) {
+                    if (j==prop) {
+                        grouped.push(persons[i][j]);
+                    }
+                }
+            }
+            return grouped;
+		}
+
+		var persons = [];
+		persons.push(new person("Gosho","Ivanov",21));
+		persons.push(new person("Pencho","Penev",10));
+		persons.push(new person("Ivan","Ivanov",11));
+
+		var groupedByFName = group(persons,"firstname");
+		var groupedByAge = group(persons,"age");
+		var groupedByLName = group(persons, "lastname");
+
+        for (var person in groupedByFName) {
+            jsConsole.writeLine(person+" -> " + groupedByFName[person]);
+        }
+
+        for (var person in groupedByAge) {
+            jsConsole.writeLine(person+ " -> " + groupedByAge[person]);
+        }
+
+        for (var person in groupedByLName) {
+            jsConsole.writeLine(person+ " -> " + groupedByLName[person]);
+        }
+
+	</script>
+</body>
+</html>
