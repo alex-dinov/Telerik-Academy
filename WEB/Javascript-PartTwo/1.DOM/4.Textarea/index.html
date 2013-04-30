@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>Textarea</title>
+</head>
+<body>
+	<script>
+		var dFrag = document.createDocumentFragment();
+		var textArea = document.createElement("textarea");
+		textArea.style.width = "400px";
+		textArea.style.height = "400px";
+		textArea.innerHTML = "some text";
+		textArea.style.fontSize = "24px";
+		dFrag.appendChild(textArea);
+		
+		var firstColorInput = document.createElement("input");
+		firstColorInput.type = "color";
+		firstColorInput.id = "firstColorInput";
+		dFrag.appendChild(firstColorInput);
+		var secondColorInput = document.createElement("input");
+		secondColorInput.type = "color";
+		dFrag.appendChild(secondColorInput);
+		document.body.appendChild(dFrag);
+
+		function setFontColor () {
+			textArea.style.color = firstColorInput.value;
+		}
+
+		function setBackgroundColor () {
+			textArea.style.background = secondColorInput.value;
+		}
+
+		document.addEventListener("change",setBackgroundColor,false);
+		document.addEventListener("change",setFontColor,false);
+	</script>
+</body>
+</html>

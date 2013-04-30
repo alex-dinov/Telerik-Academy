@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>Input types</title>
+	<script src="jQuery.js"></script>
+	<script src="modernizr.inputTypes.js"></script>
+	<script src="js-webshim/minified/polyfiller.js"></script>
+	<script>
+		$.webshims.polyfill();
+	</script>
+</head>
+<body>
+	<div>
+	    <label for="range">
+	        Range:
+	    </label>
+	    <input name="range" type="range" />
+	</div>
+
+	<div>
+	    <label for="number">
+	        Number:
+	    </label>
+	    <input name="number" placeholder="number" type="number" />
+	</div>
+
+	<div>
+	    <label for="email">
+	        Email:
+	    </label>
+	    <input name="email" placeholder="aba@aba.bg" type="email" />
+	</div>
+
+	<div>
+	    <label for="date">
+	        Date:
+	    </label>
+	    <input name="date" data-placeholder="year/month/day" type="date" />
+	</div>   
+
+	<div>
+	    <label for="color">
+	        Color: 
+	    </label>
+	    <input name="color" type="color" />
+	</div>       
+
+	<div>
+	    <label for="datetime">
+	        DateTime: 
+	    </label>
+	    <input name="datetime" type="datetime" />
+	</div>    
+	    
+	<div>
+	    <label for="month">
+	        Month: 
+	    </label>
+	    <input name="month" type="month" />
+	</div>   
+
+	<div>
+	    <label for="search">
+	        Search: 
+	    </label>
+	    <input name="search" type="search" />
+	</div> 
+
+	<div>
+	    <label for="tel">
+	        Tel: 
+	    </label>
+	    <input name="tel" placeholder="0123456789" type="tel" />
+	</div>
+	    	
+	<div>
+	    <label for="time">
+	        Time: 
+	    </label>
+	    <input name="time" type="time" />
+	</div>
+
+	<div>
+	    <label for="url">
+	        URL: 
+	    </label>
+	    <input name="url" placeholder="http://pesho.com" type="url" />
+	</div>
+
+	<div>
+	    <label for="week">
+	        Week: 
+	    </label>
+	    <input name="week" type="week" />
+	</div>
+
+	<div>
+	    <input type="submit" value="Submit"/>
+	</div>
+</body>
+</html>

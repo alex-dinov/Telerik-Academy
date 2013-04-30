@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>Tree View</title>
+	<style type="text/css">
+		li > ul {
+			display: none;
+		}
+		ul {
+			list-style: none;
+		}
+		ul li:before {
+			content: "\25BA";
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>Item</li>
+		<li>Item</li>
+		<li>Item
+			<ul>
+				<li>Sub item</li>
+				<li>Sub item
+					<ul>
+						<li>Sub item</li>
+						<li>Sub item</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>Item</li>
+		<li>Item</li>
+	</ul>
+	<script type="text/javascript">
+		var liTags = document.getElementsByTagName('li');
+
+		for(var i = 0; i < liTags.length; i++) {
+			liTags[i].addEventListener('click', openSubList);
+		}
+
+		function openSubList(event) {
+			if(typeof this.getElementsByTagName('ul')[0] == 'undefined') return 0;
+
+			if( this === event.target && this.getElementsByTagName('ul')[0].style.display == 'block') {
+					this.getElementsByTagName('ul')[0].style.display = 'none';
+			}
+			else {
+				this.getElementsByTagName('ul')[0].style.display = 'block';
+			}
+		}
+	</script>
+</body>
+</html>

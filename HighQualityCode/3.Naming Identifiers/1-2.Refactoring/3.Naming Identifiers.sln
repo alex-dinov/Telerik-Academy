@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolePrinter", "ConsolePrinter\ConsolePrinter.csproj", "{16424D96-88B1-4C18-9C87-983398E6182B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonFactory", "PersonFactory\PersonFactory.csproj", "{80A7586A-0D5D-4626-A980-8D4A528713FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16424D96-88B1-4C18-9C87-983398E6182B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16424D96-88B1-4C18-9C87-983398E6182B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16424D96-88B1-4C18-9C87-983398E6182B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16424D96-88B1-4C18-9C87-983398E6182B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80A7586A-0D5D-4626-A980-8D4A528713FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80A7586A-0D5D-4626-A980-8D4A528713FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80A7586A-0D5D-4626-A980-8D4A528713FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80A7586A-0D5D-4626-A980-8D4A528713FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

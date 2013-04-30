@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>Number of div elements</title>
+</head>
+<body>
+	<p>Please enter number of divs, that you want to create</p>
+	<input type="text" id="numberOfDivs">
+	<button onclick="createDivs()">Create</button>
+
+	<script>
+
+		function getRandomNumber (min, max) {
+			return Math.floor((Math.random()*max) + min);
+		}
+
+		function getRandomColor() {
+		    var letters = '0123456789ABCDEF'.split('');
+		    var color = '#';
+		    for (var i = 0; i < 6; i++ ) {
+		        color += letters[Math.round(Math.random() * 15)];
+		    }
+		    return color;
+		}
+
+		function createDivs () {
+			var numberOfDivs = parseInt(document.getElementById("numberOfDivs").value);
+			var dFrag = document.createDocumentFragment();
+
+			for (var i = 0; i < numberOfDivs; i++) {
+				var div = document.createElement("div");
+				div.style.width = getRandomNumber(20,100)+"px";
+				div.style.height = getRandomNumber(20,100)+"px";
+				div.style.background = getRandomColor();
+				div.style.color = getRandomColor();
+				div.style.position = "absolute";
+				div.style.top = getRandomNumber(80,460) + "px";
+                div.style.left = getRandomNumber(1,1200) + "px";
+				div.innerHTML = "<strong>div</strong>";
+				div.style.borderRadius = getRandomNumber(1,100)+"px";
+				div.style.borderColor = getRandomColor();
+				div.style.borderWidth = getRandomNumber(1,20)+"px";
+				dFrag.appendChild(div);
+			}
+			document.body.appendChild(dFrag);
+		}
+	</script>
+</body>
+</html>

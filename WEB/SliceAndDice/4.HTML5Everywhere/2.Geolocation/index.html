@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>Geolocation</title>
+	<script src="jQuery.js"></script>
+    <script type="text/javascript" src="modernizr.geolocation.js"></script>
+	<script src="js-webshim/minified/polyfiller.js"></script>
+	 <script>
+        $.webshims.polyfill('geolocation');
+    </script>
+</head>
+<body>
+	<p id="demo">Click the button to get your position:</p>
+	<button onclick="getLocation()">Try It</button>
+	<script>
+		var x = document.getElementById("demo");
+		function getLocation()
+		{
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition);
+			}
+			else {
+				x.innerHTML="Geolocation is not supported by this browser.";
+			}
+		}
+		function showPosition(position)
+		{
+			x.innerHTML="Latitude: " + position.coords.latitude + 
+			"<br>Longitude: " + position.coords.longitude;	
+		}
+
+		    
+	</script>
+</body>
+</html>

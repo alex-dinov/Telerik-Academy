@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>Circular Path</title>
+</head>
+<body>
+	<script>
+		function getRandomNumber (min, max) {
+					return Math.floor((Math.random()*max) + min);
+		}
+
+
+		function getRandomColor() {
+		    var letters = '0123456789ABCDEF'.split('');
+		    var color = '#';
+		    for (var i = 0; i < 6; i++ ) {
+		        color += letters[Math.round(Math.random() * 15)];
+		    }
+		    return color;
+		}
+
+
+		function createDivs() {
+			var div = document.createElement('div');
+			div.style.position = 'absolute';
+			div.style.left =  "50px";
+			div.style.top = "50px";
+			div.style.margin = "250px 250px 250px 650px";
+			div.style.width = "100px";
+			div.style.height = "100px";
+			div.innerHTML = "<strong>div</strong>";
+			div.style.backgroundColor = getRandomColor();
+			div.style.border = "5px solid" + getRandomColor();
+			div.style.borderRadius = "50px";
+
+			document.body.appendChild(div);
+		}
+
+		for(var i = 0; i < 5; i++) {
+			createDivs();
+		}
+
+		var allDivs = document.querySelectorAll("div");
+		var angle = 0;
+		function rotateDivs () {
+			for(var i = 0; i < 5; i++) {
+				allDivs[i].style.left = Math.cos(angle + 2 * Math.PI / allDivs.length * i)/50 * 10000 + "px";
+				allDivs[i].style.top = Math.sin(angle + 2 * Math.PI / allDivs.length* i)/50 * 10000 + "px";
+			}
+		    angle = angle + 0.1;
+		}
+
+		setInterval(rotateDivs, 100);
+
+	</script>
+</body>
+</html>
