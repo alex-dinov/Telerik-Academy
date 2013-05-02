@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>Vehicles</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		Function.prototype.inherit = function(parent) {
+		    this.prototype = new parent();
+		    this.prototype.constructor = parent;
+		}
+
+		function Vehicle (speed, propulsionUnits) {
+			this.speed = speed;
+			this.propulsionUnits = propulsionUnits;
+		}
+
+		Vehicle.prototype.accelerate = function () {
+			for (var i = 0; i < this.propulsionUnits.length; i++) {
+				this.speed += this.propulsionUnits[i].getAcceleration();
+			}
+		}
+
+		function PropulsionUnit () {
+
+		}
+
+		function Wheel (radius) {
+			this.radius = radius;
+		}
+
+		Wheel.inherit(PropulsionUnit);
+
+		Wheel.prototype.getAcceleration = function () {
+			return parseInt(2 * Math.PI * this.radius);
+		}
+
+		function PropellingNozzle (power, afterburnerSwitch) {
+			this.power = power;
+			this.afterburnerSwitch = afterburnerSwitch;
+		}
+
+		PropellingNozzle.inherit(PropulsionUnit);
+
+		PropellingNozzle.prototype.getAcceleration = function () {
+			if (this.afterburnerSwitch) {
+				return 2 * this.power;
+			}
+			else {
+				return this.power;
+			}
+		}
+
+		function Propeller (numberOfFins, spinDirection) {
+			this.numberOfFins = numberOfFins;
+			this.spinDirection = spinDirection;
+		}
+
+		Propeller.inherit(PropulsionUnit);
+
+		Propeller.prototype.getAcceleration = function () {
+			if (this.spinDirection) {
+				return this.numberOfFins;
+			}
+			else {
+				return -this.numberOfFins;
+			}
+		}
+
+		function LandVehicle (speed) {
+			Vehicle.apply(this, arguments);
+			this.propulsionUnits = [new Wheel(),new Wheel(),new Wheel(),new Wheel()];
+		}
+
+		LandVehicle.inherit(Vehicle);
+
+		function AirVehicle (speed) {
+			Vehicle.apply(this, arguments);
+			this.propulsionUnits = [new PropellingNozzle()];
+		}
+
+		AirVehicle.inherit(Vehicle);
+
+		AirVehicle.prototype.switchAfterburners = function (afterburnerSwitch) {
+			for (var i = 0, len = this.propulsionUnits.length; i < len; i++) {
+	            if (this.propulsionUnits[i] instanceof PropellingNozzle) {
+	                this.propulsionUnits[i].afterburnerSwitch = afterburnerSwitch;
+	            }
+        	}
+		}
+
+		function WaterVehicle (speed, propeller) {
+			Vehicle.apply(this, arguments);
+		}
+
+		WaterVehicle.inherit(Vehicle);
+
+		WaterVehicle.prototype.changeSpinDirection = function (spinDirection) {
+			for (var i = 0, len = this.propulsionUnits.length; i < len; i++) {
+	            if (this.propulsionUnits[i] instanceof Propeller) {
+	                this.propulsionUnits[i].spinDirection = spinDirection;
+	            }
+        	}
+		}
+
+		var AmphibianMode = Object.freeze({
+	        "Land": 1,
+	        "Water": 2
+		});
+
+		function AmphibiousVehicle (speed, wheels, mode) {
+			Vehicle.apply(this, arguments);
+			this.propulsionUnits = [new Propeller()];
+			for (var i = 0; i < wheels; i++) {
+				this.propulsionUnits.push(new Wheel());
+			}
+			this.mode = mode;
+		}
+
+		AmphibiousVehicle.inherit(Vehicle);
+
+		AmphibiousVehicle.prototype.accelerate = function () {
+			if (this.mode === AmphibianMode.Land) {
+	            for (var i = 0; i < this.propulsionUnits.length; i++) {
+	                if (this.propulsionUnits[i] instanceof Wheel) {
+	                    this.speed += this.propulsionUnits[i].getAcceleration();
+	                }
+	            }
+	        } 
+	        else {
+	            for (var i = 0; i < this.propulsionUnits.length; i++) {
+	                if (this.propulsionUnits[i] instanceof Propeller) {
+	                    this.speed += this.propulsionUnits[i].getAcceleration();
+	                }
+	            }
+	        }
+		}
+
+		var waterVehicle = new WaterVehicle(100, [new Propeller(), new Propeller(), new Propeller()]);
+		waterVehicle.changeSpinDirection(true);
+
+		var amphibiousVehicle = new AmphibiousVehicle(100, 3, AmphibianMode.Water);
+		amphibiousVehicle.propulsionUnits[0].numberOfFins = 200;
+		amphibiousVehicle.accelerate();
+	</script>
+</body>
+</html>

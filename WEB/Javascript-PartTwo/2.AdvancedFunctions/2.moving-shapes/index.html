@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>Moving shapes</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var movingShapes = (function () {
+		var ellipseDivs = [],
+		rectDivs = [],
+		angle = 0,
+		rectWidth = 125,
+		rectHeight = 100,
+		speed = 100;
+
+		function add(movement) {
+			if(movement == 'rect'){
+				rectDivs.push(createDivs());
+				addToPage(rectDivs);
+				rectWidth *= rectDivs.length;
+				moveRectDivs();
+			}
+			else if(movement == 'ellipse') {
+				ellipseDivs.push(createDivs());
+				addToPage(ellipseDivs);
+				moveEllipseDivs();
+			}
+		}
+
+		function getRandomNumber (min, max) {
+			return Math.floor((Math.random()*max) + min);
+		}
+
+
+		function getRandomColor() {
+		    var letters = '0123456789ABCDEF'.split('');
+		    var color = '#';
+		    for (var i = 0; i < 6; i++ ) {
+		        color += letters[Math.round(Math.random() * 15)];
+		    }
+		    return color;
+		}
+
+
+		function createDivs() {
+			var div = document.createElement('div');
+			div.style.position = 'absolute';
+			div.style.left =  "50px";
+			div.style.top = "50px";
+			div.style.margin = "250px 250px 250px 650px";
+			div.style.width = "100px";
+			div.style.height = "100px";
+			div.innerHTML = "<strong>div</strong>";
+			div.style.backgroundColor = getRandomColor();
+			div.style.border = "5px solid" + getRandomColor();
+			div.style.borderRadius = "50px";
+
+			return div;
+		}
+
+		function addToPage (divs) {
+			for(var i = 0; i < divs.length; i++) {
+				document.body.appendChild(divs[i]);
+			}
+		}
+
+		var allDivs = document.querySelectorAll("div");
+
+		function moveEllipseDivs () {
+			for(var i = 0; i < ellipseDivs.length; i++) {
+				ellipseDivs[i].style.left = Math.cos(angle + 2 * Math.PI / ellipseDivs.length * i)/50 * 10000 + "px";
+				ellipseDivs[i].style.top = Math.sin(angle + 2 * Math.PI / ellipseDivs.length* i)/50 * 10000 + "px";
+			}
+		    angle = angle + 0.1;
+
+		    setTimeout(moveEllipseDivs, speed);
+		}
+
+		function moveRectDivs () {
+			var leftPos,
+				topPos;
+
+			for(i = 0; i < rectDivs.length; i++) {
+				leftPos = parseInt(rectDivs[i].style.left);
+				topPos = parseInt(rectDivs[i].style.top);
+
+				if(leftPos < rectWidth && topPos == 0)
+					leftPos += 50;
+				else if(leftPos == rectWidth && topPos < rectHeight)
+					topPos += 50;
+				else if(topPos == rectHeight && leftPos > 0)
+					leftPos -= 50;
+				else
+					topPos -= 50;
+
+				rectDivs[i].style.left = leftPos + 'px';
+				rectDivs[i].style.top = topPos + 'px';
+			}
+
+			setTimeout(moveRectDivs, speed+50);
+		}
+
+		return {
+			add: add
+		};
+
+	})();
+	
+	movingShapes.add('rect');
+	movingShapes.add('rect');
+	
+	movingShapes.add('ellipse');
+	movingShapes.add('ellipse');
+	movingShapes.add('ellipse');
+
+	</script>
+</body>
+</html>

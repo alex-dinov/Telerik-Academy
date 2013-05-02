@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>Special console</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var specialConsole = (function () {
+
+			var writeLine = function () {
+				var arguments = Array.prototype.slice.call(arguments);
+				if (arguments.length > 0) {
+					var outputString = createString(arguments);
+					console.log(outputString);
+				}
+			}
+
+			var writeError = function () {
+			    var arguments = Array.prototype.slice.call(arguments);
+	            if (arguments.length > 0) {
+	                var outputString = createString(arguments);
+	                console.error(outputString);
+	            }
+			}
+
+			var writeWarning = function () {
+			    var arguments = Array.prototype.slice.call(arguments);
+	            if (arguments.length > 0) {
+	                var outputString = createString(arguments);
+	                console.error(outputString);
+	            }
+			}
+
+			function createString(data) {
+	            var regExp = new RegExp('(\\{(0)\\})', ['gi']);
+	            var string = data[0].toString();
+	            var ocurrArr = string.match(regExp);
+	            var count = 1;
+	            while (ocurrArr) {
+	                string = string.replace(regExp, (data[count] || '').toString());
+	                regExp = new RegExp('(\\{(' + count + ')\\})', ['gi']);
+	                ocurrArr = string.match(regExp);
+	                count++;
+	            }
+	 
+	            return string;
+        	}
+
+        	return {
+        		writeLine: writeLine,
+        		writeError: writeError,
+        		writeWarning: writeWarning
+        	};
+
+		})();
+
+		specialConsole.writeLine("Message: hello");
+		specialConsole.writeLine("Message: {0}", "hello");
+		specialConsole.writeError("error");
+		specialConsole.writeError("Error: {0}", "Something happened");
+		specialConsole.writeWarning("Warning: {0}", "A warning");
+
+	</script>
+</body>
+</html>
