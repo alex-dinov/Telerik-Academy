@@ -1,0 +1,491 @@
+/* Resets */
+
+html,
+body,
+div,
+header,
+ul,
+li,
+a,
+nav,
+p,
+blockquote,
+h1,
+h2,
+h3,
+footer {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+img {
+  border: 0;
+}
+h2 {
+  letter-spacing: -4px;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+@font-face {
+  font-family: OpenSans;
+  src: url('../fonts/OpenSans-Regular.ttf');
+}
+@font-face {
+  font-family: MyriadPro;
+  src: url('../fonts/MYRIADPRO-REGULAR.OTF');
+}
+@font-face {
+  font-family: OpenSansLight;
+  src: url('../fonts/OpenSans-Light.ttf');
+}
+html {
+  font-size: 62.5%;
+  font-family: OpenSans;
+}
+body #wrapper header#first-header {
+  background: -moz-linear-gradient(top, #2993c4 0%, #c2ced3 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2993c4), color-stop(100%, #c2ced3));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #2993c4 0%, #c2ced3 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #2993c4 0%, #c2ced3 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #2993c4 0%, #c2ced3 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #2993c4 0%, #c2ced3 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@from-color', endColorstr='@to-color', GradientType=0);
+  /* IE6-9 */
+
+}
+body #wrapper header#first-header div#top-header {
+  width: 960px;
+  margin: 0 auto;
+}
+body #wrapper header#first-header div#top-header div#telerik-logo {
+  float: left;
+  font-family: MyriadPro;
+  margin-top: 50px;
+  letter-spacing: -4px;
+}
+body #wrapper header#first-header div#top-header div#telerik-logo a {
+  font-size: 48px;
+}
+body #wrapper header#first-header div#top-header nav ul {
+  list-style-type: none;
+}
+body #wrapper header#first-header div#top-header nav ul li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  margin-top: 70px;
+}
+body #wrapper header#first-header div#top-header nav ul li a {
+  font-size: 14px;
+  padding: 5px 13px;
+}
+body #wrapper header#first-header div#top-header nav ul li a:hover {
+  background-color: #186387;
+  box-shadow: inset 0 0 7px #04638e;
+  border: 1px solid #446f83;
+  border-radius: 5px;
+  behavior: url(scripts/PIE_uncompressed.htc);
+}
+body #wrapper header#first-header div#top-header div#slider {
+  margin-top: 100px;
+  color: white;
+}
+body #wrapper header#first-header div#top-header div#slider div#right-arrow {
+  width: 47px;
+  height: 47px;
+  background: url('../images/forward.png') no-repeat;
+  position: absolute;
+  top: 350px;
+  right: 80px;
+}
+body #wrapper header#first-header div#top-header div#slider div#left-arrow {
+  width: 47px;
+  height: 47px;
+  background: url('../images/back.png') no-repeat;
+  position: absolute;
+  top: 350px;
+  left: 80px;
+}
+body #wrapper header#first-header div#top-header div#slider p#main-slider-header {
+  text-align: center;
+  font-size: 72px;
+  font-weight: bold;
+}
+body #wrapper header#first-header div#top-header div#slider p#main-slider-subheader {
+  font-size: 36px;
+  font-weight: lighter;
+  text-align: center;
+}
+body #wrapper header#first-header div#top-header div#theme-image {
+  margin-top: 40px;
+}
+body #wrapper header#second-header div#bottom-header {
+  width: 960px;
+  margin: 0 auto;
+}
+body #wrapper header#second-header div#bottom-header section {
+  margin-top: 75px;
+}
+body #wrapper header#second-header div#bottom-header section article {
+  float: left;
+  width: 265px;
+}
+body #wrapper header#second-header div#bottom-header section article div.quote-circle {
+  border: 10px solid #cccccc;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  behavior: url(scripts/PIE_uncompressed.htc);
+  margin: 0 auto;
+}
+body #wrapper header#second-header div#bottom-header section article div.quote-circle:after {
+  content: "\201C";
+  font-size: 132px;
+  color: #626965;
+  position: relative;
+  top: -10px;
+  left: 25px;
+}
+body #wrapper header#second-header div#bottom-header section article h3 {
+  font-size: 24px;
+  font-family: OpenSansLight;
+  font-weight: lighter;
+  color: #a3a2a2;
+}
+body #wrapper header#second-header div#bottom-header section article p {
+  font-size: 14px;
+  color: #555e58;
+}
+body #wrapper header#second-header div#bottom-header section article button {
+  font-size: 14px;
+  color: #9a9999;
+  float: right;
+  margin-top: 15px;
+  background-color: #f7f7f7;
+  padding: 10px 20px;
+  border: 1px solid #e0dddd;
+  border-radius: 5px;
+  behavior: url(scripts/PIE_uncompressed.htc);
+}
+body #wrapper header#second-header div#bottom-header section article button:hover {
+  background-color: #186f96;
+  color: white;
+}
+body #wrapper header#second-header div#bottom-header section article.middle-article {
+  padding: 0 80px;
+}
+body #wrapper header#second-header div#bottom-header section div {
+  display: block;
+  font-size: 20px;
+  margin-top: 95px;
+}
+body #wrapper header#second-header div#bottom-header section div span.bqstart {
+  font-size: 100px;
+  color: #626965;
+  float: left;
+}
+body #wrapper header#second-header div#bottom-header section div span.bqend {
+  font-size: 100px;
+  color: #626965;
+  float: right;
+}
+body #wrapper header#second-header div#bottom-header section div div {
+  font-size: 28px;
+  color: #555e58;
+  font-weight: bold;
+}
+body #wrapper section#news {
+  background-color: #829aa7;
+  margin-top: 115px;
+}
+body #wrapper section#news div#news-and-updates {
+  width: 960px;
+  margin: 0 auto;
+}
+body #wrapper section#news div#news-and-updates h2 {
+  font-weight: bold;
+  padding-top: 115px;
+  text-align: center;
+  font-size: 72px;
+  color: white;
+}
+body #wrapper section#news div#news-and-updates h3 {
+  font-size: 36px;
+  font-weight: lighter;
+  text-align: center;
+  color: white;
+}
+body #wrapper section#news div#news-and-updates section {
+  margin-top: 40px;
+}
+body #wrapper section#news div#news-and-updates section article {
+  width: 260px;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+body #wrapper section#news div#news-and-updates section article div.article-circle {
+  width: 78px;
+  height: 78px;
+  background-color: #d4d4d4;
+  border: 1px solid #5f6867;
+  border-radius: 100px;
+  behavior: url(scripts/PIE_uncompressed.htc);
+  margin: 0 auto;
+}
+body #wrapper section#news div#news-and-updates section article h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+body #wrapper section#news div#news-and-updates section article div.article-info {
+  color: #a3afac;
+  font-size: 14px;
+}
+body #wrapper section#news div#news-and-updates section article p {
+  font-size: 14px;
+  color: white;
+}
+body #wrapper section#news div#news-and-updates section article button {
+  font-size: 14px;
+  color: #9a9999;
+  float: right;
+  margin-top: 15px;
+  background-color: #68726c;
+  padding: 8px 15px;
+  border: 1px solid #68726c;
+  border-radius: 5px;
+  behavior: url(scripts/PIE_uncompressed.htc);
+}
+body #wrapper section#news div#news-and-updates section article button:hover {
+  background-color: #186f96;
+  color: white;
+}
+body #wrapper section#news div#news-and-updates section article.middle-article {
+  padding: 0 80px;
+}
+body #wrapper section#news div#news-and-updates button.end-page-button {
+  font-size: 30px;
+  color: white;
+  background-color: #68726c;
+  padding: 8px 15px;
+  border: 1px solid #68726c;
+  border-radius: 5px;
+  behavior: url(scripts/PIE_uncompressed.htc);
+  margin: 0 auto;
+  font-family: OpenSansLight;
+  margin-top: 50px;
+  margin-bottom: 120px;
+  position: relative;
+  left: 300px;
+}
+body #wrapper section#news div#news-and-updates button.end-page-button:hover {
+  background-color: #3c4a53;
+}
+body #wrapper section#work {
+  background-color: whitesmoke;
+}
+body #wrapper section#work div#work-and-pricing {
+  width: 960px;
+  margin: 0 auto;
+}
+body #wrapper section#work div#work-and-pricing h2 {
+  font-weight: bold;
+  padding-top: 115px;
+  text-align: center;
+  font-size: 72px;
+  color: #636b66;
+}
+body #wrapper section#work div#work-and-pricing h3 {
+  font-size: 36px;
+  font-weight: lighter;
+  text-align: center;
+  color: #636b66;
+}
+body #wrapper section#work div#work-and-pricing section {
+  margin-top: 55px;
+}
+body #wrapper section#work div#work-and-pricing section div.big-circle {
+  width: 250px;
+  height: 250px;
+  border: 1px solid #ababaa;
+  border-radius: 1000px;
+  behavior: url(scripts/PIE_uncompressed.htc);
+  background-color: #d4d4d4;
+  float: left;
+}
+body #wrapper section#work div#work-and-pricing section div#big-circle-center {
+  margin: 0 80px;
+  text-align: center;
+  background-color: rgba(212, 212, 212, 0.5);
+}
+body #wrapper section#work div#work-and-pricing section div#big-circle-center div {
+  margin-top: 80px;
+  font-size: 14px;
+}
+body #wrapper section#work div#work-and-pricing section div#big-circle-center div#circle-title {
+  margin: 0;
+  color: #4a524d;
+  font-size: 18px;
+  font-weight: bold;
+}
+body #wrapper section#work div#work-and-pricing section div#big-circle-center button {
+  font-size: 14px;
+  padding: 8px 15px;
+  margin-top: 15px;
+  color: #9a9999;
+  border: 1px solid #9a9999;
+}
+body #wrapper section#work div#work-and-pricing button#end-page-button-second {
+  margin-top: 50px;
+  margin-bottom: 115px;
+  text-align: center;
+  font-size: 30px;
+  color: #9a9999;
+  background-color: #f3f3f3;
+  padding: 8px 15px;
+  border: 1px solid #e0dddd;
+  border-radius: 5px;
+  behavior: url(scripts/PIE_uncompressed.htc);
+  font-family: OpenSansLight;
+  position: relative;
+  left: 300px;
+}
+body #wrapper section#plans {
+  background-color: #829aa7;
+}
+body #wrapper section#plans div#plans-and-pricing {
+  width: 960px;
+  margin: 0 auto;
+}
+body #wrapper section#plans div#plans-and-pricing h2 {
+  font-weight: bold;
+  padding-top: 115px;
+  text-align: center;
+  font-size: 72px;
+  color: white;
+}
+body #wrapper section#plans div#plans-and-pricing h3 {
+  font-size: 36px;
+  font-weight: lighter;
+  text-align: center;
+  color: white;
+}
+body #wrapper section#plans div#plans-and-pricing table {
+  color: white;
+  border: 1px solid #43535e;
+  border-collapse: collapse;
+  margin-top: 55px;
+  background-color: #465662;
+}
+body #wrapper section#plans div#plans-and-pricing table tr {
+  border: inset 2px solid #43535e;
+}
+body #wrapper section#plans div#plans-and-pricing table tr th {
+  border: 1px solid #43535e;
+  padding: 30px 75px;
+  font-size: 22px;
+  background-color: #3d4c56;
+}
+body #wrapper section#plans div#plans-and-pricing table tr td {
+  border-top: 1px solid #43535e;
+  border-bottom: 1px solid #4d606d;
+  padding: 30px 75px;
+  font-size: 14px;
+}
+body #wrapper section#plans div#plans-and-pricing table tr .price {
+  font-size: 72px;
+  background-color: #4a5b67;
+}
+body #wrapper section#plans div#plans-and-pricing table tr .true {
+  background: url('../images/true.png') no-repeat 40px 35px;
+}
+body #wrapper section#plans div#plans-and-pricing table tr .false {
+  background: url('../images/false.png') no-repeat 40px 35px;
+}
+body #wrapper section#plans div#plans-and-pricing button.end-page-button {
+  font-size: 30px;
+  color: white;
+  background-color: #3c4a53;
+  padding: 8px 15px;
+  border: 1px solid #68726c;
+  border-radius: 5px;
+  behavior: url(scripts/PIE_uncompressed.htc);
+  margin: 0 auto;
+  font-family: OpenSansLight;
+  margin-top: 50px;
+  margin-bottom: 120px;
+  position: relative;
+  left: 300px;
+}
+body #wrapper footer {
+  background-color: whitesmoke;
+}
+body #wrapper footer div#footer {
+  width: 960px;
+  margin: 0 auto;
+}
+body #wrapper footer div#footer section {
+  margin-top: 75px;
+}
+body #wrapper footer div#footer section article {
+  float: left;
+  width: 300px;
+}
+body #wrapper footer div#footer section article h1 {
+  font-size: 48px;
+  color: #555e58;
+  letter-spacing: -6px;
+}
+body #wrapper footer div#footer section article h3 {
+  margin-top: 20px;
+  color: #555e58;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+body #wrapper footer div#footer section article p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #555e58;
+}
+body #wrapper footer div#footer section article div {
+  color: #bfbfbf;
+  font-size: 14px;
+}
+body #wrapper footer div#footer section article.middle-article {
+  padding: 0 30px;
+}
+body #wrapper footer div#footer hr {
+  margin: 50px 0;
+}
+body #wrapper footer div#footer div#end-page-footer {
+  margin-left: 600px;
+  font-size: 14px;
+  margin-bottom: 250px;
+  background-color: whitesmoke;
+  color: #555e58;
+}
+@media screen and (max-width: 768px) {
+  footer {
+    display: none;
+  }
+}
+.no-cssgradients body div#wrapper header#first-header {
+  background: url('images/gradient.png') 0 0 repeat-x;
+}
