@@ -134,6 +134,9 @@ body #wrapper header#first-header div#top-header div#slider p#main-slider-subhea
 }
 body #wrapper header#first-header div#top-header div#theme-image {
   margin-top: 40px;
+  width: 964px;
+  height: 296px;
+  background: url('../images/theme-image.png') 0 0 no-repeat;
 }
 body #wrapper header#second-header div#bottom-header {
   width: 960px;
@@ -486,6 +489,177 @@ body #wrapper footer div#footer div#end-page-footer {
     display: none;
   }
 }
-.no-cssgradients body div#wrapper header#first-header {
-  background: url('images/gradient.png') 0 0 repeat-x;
+.no-cssgradients body #wrapper header#first-header {
+  background: url('../images/gradient.png') 0 0 repeat-x;
+}
+@media screen and (max-width: 480px) {
+  body #wrapper {
+    width: 100%;
+  }
+  body #wrapper header#first-header div#top-header {
+    width: 100%;
+  }
+  body #wrapper header#first-header div#top-header div#telerik-logo {
+    float: none;
+    margin: 0 auto;
+    padding-top: 50px;
+    text-align: center;
+  }
+  body #wrapper header#first-header div#top-header nav {
+    margin-top: 20px;
+  }
+  body #wrapper header#first-header div#top-header nav ul li {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 315px;
+    background-color: #186387;
+    border-radius: 10px;
+    behavior: url(scripts/PIE_uncompressed.htc);
+    border: 1px solid #446f83;
+  }
+  body #wrapper header#first-header div#top-header nav ul li a {
+    font-size: 30px;
+  }
+  body #wrapper header#first-header div#top-header nav ul .disable-nav-items {
+    display: none;
+  }
+  body #wrapper header#first-header div#top-header div#slider {
+    margin-top: 60px;
+    color: white;
+  }
+  body #wrapper header#first-header div#top-header div#slider div#right-arrow {
+    display: none;
+  }
+  body #wrapper header#first-header div#top-header div#slider div#left-arrow {
+    display: none;
+  }
+  body #wrapper header#first-header div#top-header div#slider p#main-slider-header {
+    font-size: 48px;
+  }
+  body #wrapper header#first-header div#top-header div#slider p#main-slider-subheader {
+    font-size: 24px;
+  }
+  body #wrapper header#first-header div#top-header div#theme-image {
+    width: 442px;
+    height: 135px;
+    background: url('../images/theme-image-moblie.png') 0 0 no-repeat;
+  }
+  body #wrapper header#second-header div#bottom-header section {
+    margin-top: 10px;
+  }
+  body #wrapper header#second-header div#bottom-header section article {
+    float: none;
+    width: 100%;
+  }
+  body #wrapper header#second-header div#bottom-header section article div.quote-circle {
+    display: none;
+  }
+  body #wrapper header#second-header div#bottom-header section article h3 {
+    font-size: 18px;
+    color: #555e58;
+  }
+  body #wrapper header#second-header div#bottom-header section article button {
+    float: right;
+  }
+  body #wrapper header#second-header div#bottom-header section article button:hover {
+    background-color: #186f96;
+    color: white;
+  }
+  body #wrapper header#second-header div#bottom-header section article.middle-article {
+    padding: 30px 0;
+  }
+  body #wrapper header#second-header div#bottom-header section div {
+    display: none;
+  }
+  body #wrapper section#news div#news-and-updates {
+    margin: 0 auto;
+    width: 100%;
+  }
+  body #wrapper section#news div#news-and-updates h2 {
+    padding-top: 80px;
+    font-size: 48px;
+  }
+  body #wrapper section#news div#news-and-updates h3 {
+    font-size: 24px;
+  }
+  body #wrapper section#news div#news-and-updates section {
+    margin-top: 40px;
+  }
+  body #wrapper section#news div#news-and-updates section article {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
+  body #wrapper section#news div#news-and-updates section article div.article-circle {
+    display: none;
+  }
+  body #wrapper section#news div#news-and-updates section article h3 {
+    font-size: 20px;
+    text-align: left;
+  }
+  body #wrapper section#news div#news-and-updates section article button {
+    margin-top: 0;
+  }
+  body #wrapper section#news div#news-and-updates section article.middle-article {
+    padding: 40px 0;
+  }
+  body #wrapper section#news div#news-and-updates button.end-page-button {
+    width: 80%;
+    position: static;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 0;
+  }
+  body #wrapper section#work div#work-and-pricing {
+    width: 100%;
+    margin: 0 auto;
+  }
+  body #wrapper section#work div#work-and-pricing h2 {
+    padding-top: 80px;
+    font-size: 48px;
+  }
+  body #wrapper section#work div#work-and-pricing h3 {
+    font-size: 24px;
+  }
+  body #wrapper section#work div#work-and-pricing section {
+    width: 90%;
+    margin: 0 auto;
+  }
+  body #wrapper section#work div#work-and-pricing section div.big-circle {
+    width: 123px;
+    height: 123px;
+    float: none;
+    display: inline-block;
+  }
+  body #wrapper section#work div#work-and-pricing section div#big-circle-center {
+    margin: 0 10px;
+  }
+  body #wrapper section#work div#work-and-pricing section div.disable-items-circle {
+    display: none;
+  }
+  body #wrapper section#work div#work-and-pricing button#end-page-button-second {
+    width: 90%;
+    position: static;
+    display: block;
+    margin: 40px auto;
+  }
+  body #wrapper section#plans div#plans-and-pricing {
+    width: 100%;
+  }
+  body #wrapper section#plans div#plans-and-pricing h2 {
+    padding-top: 80px;
+    font-size: 48px;
+  }
+  body #wrapper section#plans div#plans-and-pricing h3 {
+    font-size: 24px;
+  }
+  body #wrapper section#plans div#plans-and-pricing button.end-page-button {
+    width: 90%;
+    position: static;
+    display: block;
+    margin: 40px auto;
+  }
 }
