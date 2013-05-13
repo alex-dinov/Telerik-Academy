@@ -1,0 +1,42 @@
+#wrapper {
+	width: 300px;
+	margin: 40px auto;
+}
+
+button
+{
+	width: 70px;
+	height: 40px;
+	background: #018b14;
+	border-radius: 25px;
+	border-style: none;
+	font-family: Tahoma;
+	font-size: 18px;
+}
+
+button:hover
+{
+	cursor: pointer;
+}
+
+button:active
+{
+	background: #b0b0b0;
+	color: #c00;
+}
+
+p {
+	font-size:26px;
+	text-align: left;
+	color: #aaa;
+	display: inline;
+}
+
+.button-delete {
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+#hide-item {
+	margin-left: 30px;
+}

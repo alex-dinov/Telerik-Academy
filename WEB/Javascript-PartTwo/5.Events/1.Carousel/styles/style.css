@@ -1,0 +1,135 @@
+html, body, div
+{
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+	background-color: #ccc;
+}
+
+.clearfix
+{
+	content: "";
+	clear: both;
+	display: block;
+}
+
+#wrapper
+{
+	width: 540px;
+	height: 475px;
+	background-color: #aaa;
+	margin: 0px auto;
+	margin-top: 20px;
+	border-radius: 20px;
+}
+
+#main-content
+{
+	width: 100%;
+}
+
+#left-arrow, #right-arrow
+{
+	width: 68px;
+	height: 100%;
+	float: left;
+	text-align: center;
+}
+
+button
+{
+	width: 45px;
+	height: 45px;
+	margin-top: 160px;
+	background: #ffffff;
+	border-radius: 25px;
+	border-style: none;
+	font-family: Tahoma;
+	font-size: 18px;
+}
+
+button:hover
+{
+	cursor: pointer;
+}
+
+button:active
+{
+	background: #b0b0b0;
+	color: #c00;
+}
+
+#current-picture
+{
+	width: 400px;
+	height: 300px;
+	margin-top: 25px;
+	border: 2px solid #fff;
+	float: left;
+	background: url('../images/puppy-1.jpg') no-repeat center;
+}
+
+#small-pics
+{
+	width: 500px;
+	height: 100px;
+	margin: 25px 20px;
+}
+
+.small-pic
+{
+	display: inline-block;
+	float: left;
+	width: 100px;
+	height: 100px;
+	background: #787878;
+}
+
+.hovered-pic
+{
+	background: #ffffff;
+	cursor: pointer;
+}
+
+.clicked
+{
+	background: #018b14;
+}
+
+#puppy-1
+{
+	background-image: url('../images/puppy-1-small.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#puppy-2
+{
+	background-image: url('../images/puppy-2-small.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#puppy-3
+{
+	background-image: url('../images/puppy-3-small.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#puppy-4
+{
+	background-image: url('../images/puppy-4-small.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#puppy-5
+{
+	background-image: url('../images/puppy-5-small.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+}

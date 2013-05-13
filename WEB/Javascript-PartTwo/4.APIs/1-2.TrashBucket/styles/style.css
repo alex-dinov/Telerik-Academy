@@ -1,0 +1,55 @@
+		body {
+			font-size:20px;
+			font-family: Verdana, sans-serif;
+		}
+		div#bucket {
+			width: 150px;
+			height: 318px;
+			background: url('../images/bucket-closed.jpg') 0 0 no-repeat;
+			margin: 70px 0 0 50px; 
+		}
+		.trash {
+			position: absolute;
+			width: 47px;
+			height: 50px;
+			background-repeat: no-repeat;
+		}
+		#leaderboard {
+			width: 200px;
+			height:200px;
+			position: absolute;
+			left:800px;
+			top:20px;
+		}
+		#timer {
+			text-align: center;
+			font-size:28px;
+			color: #f00;
+		}
+		#endGame {
+			position: absolute;
+			left:800px;
+			top:160px;
+			display: none;
+		}
+		label {
+			display: block;
+		}
+		.button {
+			width: 180px;
+			height: 60px;
+			font-size: 18px;
+			font-weight: bold;
+			border:none;
+			background: #02849a;
+		}
+		.button:hover {
+			border: 2px solid #000;
+		}
+		#startButton {
+			background-color: #018b14;
+		}
+		#name {
+			height: 40px;
+			margin: 20px 0;
+		}
