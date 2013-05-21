@@ -1,0 +1,17 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System;
+namespace ConsoleApplication1
+{
+	public class T4Template
+	{
+		public static void Hello()
+		{ 
+			Console.WriteLine("Hello again!"); 
+		}
+	}
+}
